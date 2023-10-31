@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.23">
       <PrivateAssets>all</PrivateAssets>
@@ -20,6 +21,15 @@
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\Assets\ChePhin3.webp" />
+    <None Include="wwwroot\img\Assets\G7_3in1_Box.webp" />
+    <None Include="wwwroot\img\Assets\G7_3in1_pocket.webp" />
+    <None Include="wwwroot\img\Assets\TrungNguyenLegend_Success1.webp" />
+    <None Include="wwwroot\img\Assets\TrungNguyenLegend_Success2.webp" />
+    <None Include="wwwroot\img\Assets\WhiteCoffee_Malaysia.webp" />
   </ItemGroup>
 
 </Project>
