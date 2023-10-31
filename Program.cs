@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebsiteBanCaPhe.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WebsiteBanCaPheContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebsiteBanCaPheContext") ?? throw new InvalidOperationException("Connection string 'WebsiteBanCaPheContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
