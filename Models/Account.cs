@@ -4,6 +4,10 @@ namespace WebsiteBanCaPhe.Models
 {
     public class Account
     {
+        public Account()
+        {
+        }
+
         [Key]
         public int AccountId { get; set; }
 
@@ -18,5 +22,14 @@ namespace WebsiteBanCaPhe.Models
 
         [Required]
         public string? Gender { get; set; }
+
+        public Account(int accountId, string? phoneNumber, string? password, string? fullName, string? gender)
+        {
+            AccountId = accountId;
+            PhoneNumber = phoneNumber;
+            Password = password;
+            FullName = fullName;
+            Gender = gender;
+        }
     }
 }

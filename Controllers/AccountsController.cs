@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanCaPhe.Data;
 using WebsiteBanCaPhe.Models;
@@ -22,9 +22,9 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-              return _context.Account != null ? 
-                          View(await _context.Account.ToListAsync()) :
-                          Problem("Entity set 'WebsiteBanCaPheContext.Account'  is null.");
+            return _context.Account != null ?
+                        View(await _context.Account.ToListAsync()) :
+                        Problem("Entity set 'WebsiteBanCaPheContext.Account'  is null.");
         }
 
         // GET: Accounts/Details/5
@@ -52,8 +52,6 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         // POST: Accounts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AccountId,PhoneNumber,Password,FullName,Gender")] Account account)
@@ -150,14 +148,76 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 _context.Account.Remove(account);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AccountExists(int id)
         {
-          return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
         }
-    }
+
+        //===========================================================================
+        // Check login account available
+        // GET: Accounts/Login
+        // GET: Accounts/Login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: Accounts/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(string phone, string password)
+        {
+            if (phone == null || string.IsNullOrEmpty(password))
+            {
+                ModelState.AddModelError("", "Phone number and password are required.");
+                return View();
+            }
+
+            var account = await _context.Account.FirstOrDefaultAsync(a => a.PhoneNumber == phone && a.Password == password);
+            if (account == null)
+            {
+                ModelState.AddModelError("", "Invalid phone number or password.");
+                return View();
+            }
+
+            // Lưu thông tin tài khoản vào session
+            HttpContext.Session.SetString("AccountId", account.AccountId.ToString());
+            Console.WriteLine(HttpContext.Session.GetString("AccountId"));
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        //========================================================================
+        //Hiển thị profile
+        public IActionResult AccountProfile()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> AccountDetails()
+        {
+            // Lấy session id từ HttpContext
+            string sessionId = HttpContext.Session.GetString("AccountId");
+
+            if (sessionId == null)
+            {
+                return NotFound();
+            }
+
+            var account = await _context.Account
+      .FirstOrDefaultAsync(m => m.AccountId.ToString() == sessionId);
+
+            if (account == null)
+            {
+                return NotFound();
+            }
+
+            return View(account);
+        }
+    }   
 }
