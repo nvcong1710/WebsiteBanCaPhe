@@ -22,7 +22,13 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: CartDetails
         public async Task<IActionResult> Index()
         {
-            var websiteBanCaPheContext = _context.CartDetail.Include(c => c.Product);
+			var accountId = HttpContext.Session.GetString("AccountId");
+			var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+			var cartId = cart.CartId;
+			var websiteBanCaPheContext = _context.CartDetail
+                .Include(c => c.Cart)
+                .Include(c => c.Product)
+				.Where(c => c.CartId == cartId);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -35,6 +41,7 @@ namespace WebsiteBanCaPhe.Controllers
             }
 
             var cartDetail = await _context.CartDetail
+                .Include(c => c.Cart)
                 .Include(c => c.Product)
                 .FirstOrDefaultAsync(m => m.CartDetailId == id);
             if (cartDetail == null)
@@ -48,24 +55,50 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: CartDetails/Create
         public IActionResult Create()
         {
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch");
+            ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId");
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName");
             return View();
         }
+
+        //Add to cart
+        public async Task<IActionResult> AddToCart(int? id)
+        {
+            ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId");
+            var product = await _context.Product.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", product.ProductId);
+            ViewData["ProductName"] = product.ProductName;
+            return View();
+        }
+
 
         // POST: CartDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CartDetailId,ProductId,Quantity,TotalPrice")] CartDetail cartDetail)
+        public async Task<IActionResult> Create([Bind("CartDetailId,CartId,ProductId,Quantity")] CartDetail cartDetail)
         {
-            if (ModelState.IsValid)
+			var accountId = HttpContext.Session.GetString("AccountId");
+			var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+			var cartId = cart.CartId;
+			cartDetail.CartId = cartId;
+
+			if (ModelState.IsValid)
             {
-                _context.Add(cartDetail);
+				var product = await _context.Product.FindAsync(cartDetail.ProductId);
+				cartDetail.TotalPrice = cartDetail.Quantity * product.Price;
+				_context.Add(cartDetail);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", cartDetail.ProductId);
+            ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId", cartDetail.CartId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", cartDetail.ProductId);
             return View(cartDetail);
         }
 
@@ -82,7 +115,8 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", cartDetail.ProductId);
+            ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId", cartDetail.CartId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", cartDetail.ProductId);
             return View(cartDetail);
         }
 
@@ -91,7 +125,7 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CartDetailId,ProductId,Quantity,TotalPrice")] CartDetail cartDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("CartDetailId,CartId,ProductId,Quantity,TotalPrice")] CartDetail cartDetail)
         {
             if (id != cartDetail.CartDetailId)
             {
@@ -118,7 +152,8 @@ namespace WebsiteBanCaPhe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", cartDetail.ProductId);
+            ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId", cartDetail.CartId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", cartDetail.ProductId);
             return View(cartDetail);
         }
 
@@ -131,6 +166,7 @@ namespace WebsiteBanCaPhe.Controllers
             }
 
             var cartDetail = await _context.CartDetail
+                .Include(c => c.Cart)
                 .Include(c => c.Product)
                 .FirstOrDefaultAsync(m => m.CartDetailId == id);
             if (cartDetail == null)
