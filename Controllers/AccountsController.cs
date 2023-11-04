@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanCaPhe.Data;
 using WebsiteBanCaPhe.Models;
@@ -22,9 +22,9 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-            return _context.Account != null ?
-                        View(await _context.Account.ToListAsync()) :
-                        Problem("Entity set 'WebsiteBanCaPheContext.Account'  is null.");
+              return _context.Account != null ? 
+                          View(await _context.Account.ToListAsync()) :
+                          Problem("Entity set 'WebsiteBanCaPheContext.Account'  is null.");
         }
 
         // GET: Accounts/Details/5
@@ -52,6 +52,8 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         // POST: Accounts/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AccountId,PhoneNumber,Password,FullName,Gender")] Account account)
@@ -111,10 +113,10 @@ namespace WebsiteBanCaPhe.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(account);
-        }
+				return RedirectToAction("Index", "Home", new { account = account });
+			}
+			return RedirectToAction("Index", "Home", new { account = account });
+		}
 
         // GET: Accounts/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -148,20 +150,17 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 _context.Account.Remove(account);
             }
-
+            
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Details));
         }
 
         private bool AccountExists(int id)
         {
-            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+          return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
         }
 
-        //===========================================================================
-        // Check login account available
-        // GET: Accounts/Login
-        // GET: Accounts/Login
+        //==========================LOGIN========================================
         public IActionResult Login()
         {
             return View();
@@ -187,37 +186,7 @@ namespace WebsiteBanCaPhe.Controllers
 
             // Lưu thông tin tài khoản vào session
             HttpContext.Session.SetString("AccountId", account.AccountId.ToString());
-            Console.WriteLine(HttpContext.Session.GetString("AccountId"));
-
-            return RedirectToAction("Index", "Home");
+			return View("Details", account);
         }
-
-        //========================================================================
-        //Hiển thị profile
-        public IActionResult AccountProfile()
-        {
-            return View();
-        }
-
-        public async Task<IActionResult> AccountDetails()
-        {
-            // Lấy session id từ HttpContext
-            string sessionId = HttpContext.Session.GetString("AccountId");
-
-            if (sessionId == null)
-            {
-                return NotFound();
-            }
-
-            var account = await _context.Account
-      .FirstOrDefaultAsync(m => m.AccountId.ToString() == sessionId);
-
-            if (account == null)
-            {
-                return NotFound();
-            }
-
-            return View(account);
-        }
-    }   
+    }
 }

@@ -148,7 +148,7 @@ namespace WebsiteBanCaPhe.Controllers
         {
             if (_context.UserOrder == null)
             {
-                return Problem("Entity set 'WebsiteBanCaPheContext.Order'  is null.");
+                return Problem("Entity set 'WebsiteBanCaPheContext.UserOrder'  is null.");
             }
             var userOrder = await _context.UserOrder.FindAsync(id);
             if (userOrder != null)
