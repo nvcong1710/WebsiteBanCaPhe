@@ -1,0 +1,94 @@
+﻿@model WebsiteBanCaPhe.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="/css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- Product main img -->
+				<div class="col-md-5">
+					<img style="width:100%" src=@Model.PhotoURL alt="">
+				</div>
+				<!-- /Product main img -->
+				<!-- Product details -->
+				<div class="col-md-5">
+					<div class="product-details">
+						<h2 class="product-name">@Model.ProductName</h2>
+						<div>
+							<div class="product-rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</div>
+						</div>
+						<div>
+							<h3 class="product-price">@Model.Price</h3>
+							<span class="product-available">@((@Model.Quantity > 0) ? "In Stock" : "Out Stock")</span>
+						</div>
+						<p>@Model.ProductDescription</p>
+						<h4>Thương hiệu : @Model.Branch</h4>
+						<h4>Xuất xứ : @Model.Origin</h4>
+
+						<div class="add-to-cart">
+							<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+						</div>
+
+						<ul class="product-links">
+							<li>Category:</li>
+							<li><a href="#">@Model.Category.CategoryName</a></li>
+						</ul>
+
+					</div>
+				</div>
+				<!-- /Product details -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- jQuery Plugins -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/nouislider.min.js"></script>
+	<script src="/js/jquery.zoom.min.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

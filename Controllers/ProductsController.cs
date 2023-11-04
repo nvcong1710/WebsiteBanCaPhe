@@ -27,7 +27,7 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         // GET: Products/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, Account account)
         {
             if (id == null || _context.Product == null)
             {
