@@ -9,189 +9,201 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteBanCaPhe
 build_property.RootNamespace = WebsiteBanCaPhe
-build_property.ProjectDir = D:\document\StudyMaterial\session1year3\httt\Đồ án\codenew\WebsiteBanCaPhe\
+build_property.ProjectDir = D:\Nam3\Ki5\Xay_dung_HTTT_Framework_nam3\DOAN_F\WebsiteBanCaPhe\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\document\StudyMaterial\session1year3\httt\Đồ án\codenew\WebsiteBanCaPhe
+build_property.MSBuildProjectDirectory = D:\Nam3\Ki5\Xay_dung_HTTT_Framework_nam3\DOAN_F\WebsiteBanCaPhe
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQWRkVG9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Home/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CheckoutPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/IntroducePage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50cm9kdWNlUGFnZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Products/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Products/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Products/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Products/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Products/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2QmFyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_LayoutBeforeLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCZWZvcmVMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/document/StudyMaterial/session1year3/httt/Đồ án/codenew/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-md5lbm1x4i
