@@ -43,7 +43,9 @@
 ## Hướng dẫn cài đặt
 
 1. Clone repository này về máy của bạn.
-**git clone https://github.com/nvcong1710/WebsiteBanCaPhe.git**
+
+  `git clone https://github.com/nvcong1710/WebsiteBanCaPhe.git`
+
 2. Mở project bằng Visual Studio/Visual Studio Code
 3. Sửa connection string kết nối với database trong file appsetting.json
 4. Chạy trên localhost
