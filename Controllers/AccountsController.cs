@@ -72,6 +72,7 @@ namespace WebsiteBanCaPhe.Controllers
             var id = HttpContext.Session.GetString("AccountId");
             if (id == null || _context.Account == null)
             {
+                int n;
                 return NotFound();
             }
 
