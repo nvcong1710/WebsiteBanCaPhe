@@ -14,7 +14,7 @@ namespace WebsiteBanCaPhe.Controllers
 			_context = context;
 		}
 
-		public IActionResult Index(Account account)
+		public IActionResult Index()
         {
             return View(_context.Product.ToList());
         }

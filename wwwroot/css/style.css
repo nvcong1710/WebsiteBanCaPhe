@@ -854,7 +854,8 @@ textarea.input {
 
 .product {
   position: relative;
-  margin: 15px 0px;
+  margin: 50px 10px;
+  padding: 0px;
   -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   -webkit-transition: 0.2s all;
@@ -900,7 +901,7 @@ textarea.input {
 
 .product .product-body {
   position: relative;
-  padding: 15px;
+  padding: 0px;
   background-color: #FFF;
   text-align: center;
   z-index: 20;
