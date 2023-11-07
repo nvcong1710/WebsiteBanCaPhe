@@ -37,8 +37,8 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> Trường Đại học Công Nghệ Thông Tin</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="Accounts/AccountProfile"><i class="fa fa-user-o"></i> My Account</a></li>
-					<li><a href="/Accounts/Login"><i class="fa fa-sign-in"></i> Log in</a></li>
+					<li><a href="/Accounts/Details"><i class="fa fa-user-o"></i> My Account</a></li>
+					<li><a href="/Accounts/Create"><i class="fa fa-sign-in"></i>Tạo tài khoản</a></li>
 					<li><a href="/Accounts/Login"><i class="fa fa-sign-out"></i> Log out</a></li>
 				</ul>
 			</div>
@@ -79,20 +79,12 @@
 						<div class="header-ctn">
 							<!-- Cart -->
 							<div>
-								<a href="/CartDetails">
+								<a href="/CartDetails/Index">
 									<i class="fa fa-shopping-cart"></i>
 									<span>Your Cart</span>
 								</a>
 							</div>
 							<!-- /Cart -->
-							<!-- Menu Toogle -->
-							<div class="menu-toggle">
-								<a href="#">
-									<i class="fa fa-bars"></i>
-									<span>Menu</span>
-								</a>
-							</div>
-							<!-- /Menu Toogle -->
 						</div>
 					</div>
 					<!-- /ACCOUNT -->
@@ -116,7 +108,7 @@
 		</div>
 		<!-- /container -->
 	</div>
-	
+	<div style="height:30px"></div>
 	<!-- FOOTER -->
 	<footer id="footer">
 		<!-- top footer -->
@@ -125,12 +117,12 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-3 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 						<div class="footer">
 							<h3 class="footer-title">About Us</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+							<p>Nhóm Lửa hận thù, lớp IS220.O12</p>
 							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+								<li><a href="#"><i class="fa fa-map-marker"></i>Trường Đại học Công nghệ Thông tin, Đại học Quốc gia Hồ Chí Minh</a></li>
 								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
 							</ul>
@@ -142,10 +134,9 @@
 							<h3 class="footer-title">Categories</h3>
 							<ul class="footer-links">
 								<li><a href="#">Hot deals</a></li>
-								<li><a href="#">Laptops</a></li>
-								<li><a href="#">Smartphones</a></li>
-								<li><a href="#">Cameras</a></li>
-								<li><a href="#">Accessories</a></li>
+								<li><a href="#">Cà phê hạt</a></li>
+								<li><a href="#">Cà phê pha phin</a></li>
+								<li><a href="#">Cà phê hoà tan</a></li>
 							</ul>
 						</div>
 					</div>
@@ -154,25 +145,11 @@
 
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">Information</h3>
-							<ul class="footer-links">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Orders and Returns</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
 							<h3 class="footer-title">Service</h3>
 							<ul class="footer-links">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">View Cart</a></li>
+								<li><a href="/Accounts/Details">My Account</a></li>
+								<li><a href="/CartDetails/Index">View Cart</a></li>
 								<li><a href="#">Wishlist</a></li>
-								<li><a href="#">Track My Order</a></li>
 								<li><a href="#">Help</a></li>
 							</ul>
 						</div>
@@ -182,25 +159,15 @@
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /top footer -->
 		<!-- bottom footer -->
 		<div id="bottom-footer" class="section">
 			<div class="container">
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<ul class="footer-payments">
-							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-						</ul>
 						<span class="copyright">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Website đồ án Xây dựng hệ thống thông tin trên các framework <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 						</span>
 					</div>
 				</div>
@@ -211,11 +178,6 @@
 		<!-- /bottom footer -->
 	</footer>
 	<!-- /FOOTER -->
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
 	<!-- jQuery Plugins -->
 	<script src="/js/jquery.min.js"></script>
