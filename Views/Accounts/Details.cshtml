@@ -17,12 +17,6 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.FullName)
         </dt>
         <dd>
@@ -37,5 +31,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.AccountId">Edit</a>
+    <a href="/Accounts/Edit">Edit</a>
 </div>

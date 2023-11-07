@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Login";
+    Layout = "_LayoutBeforeLogin";
 }
 
 <h1>Login</h1>
@@ -15,15 +16,20 @@
         }
     </div>
 }
-
-<form asp-action="Login" method="post">
-    <div class="form-group">
-        <label for="phone">Số điện thoại</label>
-        <input type="text" class="form-control" id="phone" name="phone" required>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="p-5">
+            <form asp-action="Login" method="post" class="user">
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" class="form-control form-control-user" id="phone" name="phone" required placeholder="Nhập số điện thoại...">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control form-control-user" id="password" name="password" required placeholder="Nhập mật khẩu...">
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+</div>
