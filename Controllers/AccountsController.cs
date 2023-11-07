@@ -28,43 +28,14 @@ namespace WebsiteBanCaPhe.Controllers
                           Problem("Entity set 'WebsiteBanCaPheContext.Account'  is null.");
         }
 
-        // GET: Accounts/Details/5
+        // GET: Accounts/Details
         public async Task<IActionResult> Details()
         {
-			var accountID = HttpContext.Session.GetString("AccountID");
-			var account = GetAccountById(accountID);
-			return View(account);
+			var accountId = HttpContext.Session.GetString("AccountId");
+			var account = await _context.Account.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+            return View(account);
         }
-		//==============================================================================
-		public Account GetAccountById(string accountId)
-		{
-			Account account = null;
-			using (var connection = new SqlConnection("your connection string"))
-			{
-				connection.Open();
-
-				using (var command = new SqlCommand("SELECT * FROM Accounts WHERE AccountId = @AccountId", connection))
-				{
-
-					command.Parameters.AddWithValue("@AccountId", accountId);
-
-					using (var reader = command.ExecuteReader())
-					{
-						while (reader.Read())
-						{
-							account = new Account();
-							account.AccountId = (int)reader["AccountId"];
-							account.PhoneNumber = reader["PhoneNumber"].ToString();
-							account.Password = reader["Password"].ToString();
-							account.FullName = reader["FullName"].ToString();
-							account.Gender = reader["Gender"].ToString();
-						}
-					}
-				}
-			}
-			return account;
-		}
-		//=============================================================================
+		//===========================================================================
 		// GET: Accounts/Create
 		public IActionResult Create()
         {
@@ -82,20 +53,29 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 _context.Add(account);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var cart = new Cart
+                {
+                    AccountId = account.AccountId,
+                    TotalValue = 0
+                };
+                _context.Add(cart);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Login", "Accounts");
             }
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Login", "Accounts");
 		}
 
         // GET: Accounts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit()
         {
+            var id = HttpContext.Session.GetString("AccountId");
             if (id == null || _context.Account == null)
             {
                 return NotFound();
             }
 
-            var account = await _context.Account.FindAsync(id);
+            var account = await _context.Account.FirstOrDefaultAsync(c => c.AccountId.ToString() == id);
             if (account == null)
             {
                 return NotFound();
@@ -108,9 +88,10 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AccountId,PhoneNumber,Password,FullName,Gender")] Account account)
+        public async Task<IActionResult> Edit([Bind("AccountId,PhoneNumber,Password,FullName,Gender")] Account account)
         {
-            if (id != account.AccountId)
+            var id = HttpContext.Session.GetString("AccountId");
+            if (id != account.AccountId.ToString())
             {
                 return NotFound();
             }

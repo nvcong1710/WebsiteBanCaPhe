@@ -1,29 +1,29 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lửa Hận Thù - Website bán cà phê</title>
+	<title>Lửa Hận Thù - Website bán cà phê</title>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
 
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="/css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
 
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
 
-    <!-- Font Awesome Icon -->
+	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	<!-- HEADER -->
@@ -37,9 +37,9 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> Trường Đại học Công Nghệ Thông Tin</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="/Accounts/Details"><i class="fa fa-user-o"></i> My Account</a></li>
 					<li><a href="/Accounts/Create"><i class="fa fa-sign-in"></i>Tạo tài khoản</a></li>
-					<li><a href="/Accounts/Login"><i class="fa fa-sign-out"></i> Log out</a></li>
+					<li><a href="/Accounts/Login"><i class="fa fa-sign-out"></i>Đăng nhập
+						</a></li>
 				</ul>
 			</div>
 		</div>
@@ -74,20 +74,6 @@
 						</div>
 					</div>
 					<!-- /SEARCH BAR -->
-					<!-- ACCOUNT -->
-					<div class="col-md-3 clearfix">
-						<div class="header-ctn">
-							<!-- Cart -->
-							<div>
-								<a href="/CartDetails/Index">
-									<i class="fa fa-shopping-cart"></i>
-									<span>Your Cart</span>
-								</a>
-							</div>
-							<!-- /Cart -->
-						</div>
-					</div>
-					<!-- /ACCOUNT -->
 				</div>
 				<!-- row -->
 			</div>
@@ -99,16 +85,15 @@
 	<!-- NAVIGATION -->
 	@await Component.InvokeAsync("NavBar");
 	<!-- /NAVIGATION -->
-
 	<!-- SECTION -->
 	<div class="section">
 		<!-- container -->
-        <div class="container">
-            @RenderBody()
+		<div class="container">
+			@RenderBody()
 		</div>
 		<!-- /container -->
 	</div>
-	
+
 	<!-- FOOTER -->
 	<footer id="footer">
 		<!-- top footer -->
@@ -203,11 +188,11 @@
 		<!-- /bottom footer -->
 	</footer>
 	<!-- /FOOTER -->
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
 
 	<!-- jQuery Plugins -->
 	<script src="/js/jquery.min.js"></script>
@@ -216,6 +201,6 @@
 	<script src="/js/nouislider.min.js"></script>
 	<script src="/js/jquery.zoom.min.js"></script>
 	<script src="/js/main.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

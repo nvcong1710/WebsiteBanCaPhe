@@ -13,9 +13,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cart)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Product)
             </th>
             <th>
@@ -30,9 +27,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cart.CartId)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.ProductName)
             </td>
@@ -51,3 +45,6 @@
 }
     </tbody>
 </table>
+<button>
+    <a href="/CheckoutPage/Index"> Đặt hàng </a>
+</button>

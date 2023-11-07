@@ -91,11 +91,24 @@ namespace WebsiteBanCaPhe.Controllers
 
 			if (ModelState.IsValid)
             {
-				var product = await _context.Product.FindAsync(cartDetail.ProductId);
-				cartDetail.TotalPrice = cartDetail.Quantity * product.Price;
-				_context.Add(cartDetail);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var product = await _context.Product.FindAsync(cartDetail.ProductId);
+                var existingCartDetail = await _context.CartDetail.FirstOrDefaultAsync(cd => cd.CartId == cartId && cd.ProductId == cartDetail.ProductId);
+
+                if (existingCartDetail != null)
+                {
+                    existingCartDetail.Quantity += cartDetail.Quantity;
+                    existingCartDetail.TotalPrice = existingCartDetail.Quantity * existingCartDetail.Product.Price;
+                    _context.Update(existingCartDetail);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    cartDetail.TotalPrice = cartDetail.Quantity * product.Price;
+                    _context.Add(cartDetail);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             ViewData["CartId"] = new SelectList(_context.Cart, "CartId", "CartId", cartDetail.CartId);
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", cartDetail.ProductId);
@@ -136,6 +149,8 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 try
                 {
+                    var product = await _context.Product.FindAsync(cartDetail.ProductId);
+                    cartDetail.TotalPrice = cartDetail.Quantity * product.Price;
                     _context.Update(cartDetail);
                     await _context.SaveChangesAsync();
                 }

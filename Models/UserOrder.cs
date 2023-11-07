@@ -24,17 +24,14 @@ namespace WebsiteBanCaPhe.Models
         [Required]
         public string? PaymentMethod { get; set; }
 
-        public string? Note { get; set; }
+        public string? Note { get; set; } = "không có ghi chú";
+
+        public decimal ShippingFee { get; set; } = 0;
+
+        public decimal TotalValue { get; set; } = 0;
 
         [Required]
-        public decimal ShippingFee { get; set; }
-
-        [Required]
-        public decimal TotalValue { get; set; }
-
-        
-        [Required]
-        public bool IsDone { get; set; }
+        public bool IsDone { get; set; } = false;
 
         [ForeignKey("Account")]
         public int AccountId { get; set; }
