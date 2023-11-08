@@ -1,4 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
+
+﻿using Microsoft.AspNetCore.Mvc;
+>>>>>>> cong
 
 namespace WebsiteBanCaPhe.Controllers
 {

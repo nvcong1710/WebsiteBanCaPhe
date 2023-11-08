@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
   },
   "projects": {
@@ -15,11 +16,33 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\codenew\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
+  },
+  "projects": {
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\codenew\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\codenew\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectName": "WebsiteBanCaPhe",
+        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\codenew\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\codenew\\WebsiteBanCaPhe\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> cong
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+<<<<<<< HEAD
+=======
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+>>>>>>> cong
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +117,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+>>>>>>> cong
         }
       }
     }
