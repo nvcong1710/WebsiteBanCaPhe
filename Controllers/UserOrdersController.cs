@@ -22,7 +22,9 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: UserOrders
         public async Task<IActionResult> Index()
         {
-            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account);
+            var accountId = HttpContext.Session.GetString("AccountId");
+            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
+                .Where(u => u.AccountId.ToString() == accountId);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -46,9 +48,24 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         // GET: UserOrders/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName");
+            var accountId = HttpContext.Session.GetString("AccountId");
+            var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+            var cartId = cart.CartId;
+
+            var listCartDetail = _context.CartDetail
+                .Include(c => c.Cart)
+                .Include(c => c.Product)
+                .Where(c => c.CartId == cartId);
+
+            var cartTotalValue = listCartDetail.Sum(c => c.TotalPrice);
+
+            ViewData["AccountId"] = accountId;
+            ViewData["OrderDate"] = DateTime.Now.ToString("yyyy-MM-dd");
+            ViewData["ShippingFee"] = 0;
+            ViewData["ListCartDetail"] = await listCartDetail.ToListAsync();
+            ViewData["TotalValue"] = ViewData["CartTotalValue"] = cartTotalValue;
             return View();
         }
 
@@ -59,14 +76,9 @@ namespace WebsiteBanCaPhe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderId,OrderDate,ReceiverName,PhoneNumber,Address,PaymentMethod,Note,ShippingFee,TotalValue,IsDone,AccountId")] UserOrder userOrder)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(userOrder);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", userOrder.AccountId);
-            return View(userOrder);
+            _context.Add(userOrder);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: UserOrders/Edit/5
@@ -97,29 +109,23 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    _context.Update(userOrder);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserOrderExists(userOrder.OrderId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(userOrder);
+                await _context.SaveChangesAsync();
             }
-            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", userOrder.AccountId);
-            return View(userOrder);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserOrderExists(userOrder.OrderId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: UserOrders/Delete/5
@@ -155,14 +161,14 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 _context.UserOrder.Remove(userOrder);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserOrderExists(int id)
         {
-          return (_context.UserOrder?.Any(e => e.OrderId == id)).GetValueOrDefault();
+            return (_context.UserOrder?.Any(e => e.OrderId == id)).GetValueOrDefault();
         }
     }
 }
