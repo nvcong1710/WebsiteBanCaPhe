@@ -1,7 +1,5 @@
 
 ﻿using Microsoft.AspNetCore.Mvc;
->>>>>>> cong
-
 namespace WebsiteBanCaPhe.Controllers
 {
 	public class IntroducePageController : Controller
