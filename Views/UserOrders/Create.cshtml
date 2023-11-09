@@ -2,38 +2,42 @@
 
 @{
     ViewData["Title"] = "Create";
+    var listCartDetail = ViewData["ListCartDetail"] as List<CartDetail>;
+}
+@if (!String.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <script type="text/javascript">
+        alert("@Html.Raw(ViewBag.ErrorMessage)");
+    </script>
 }
 
-<h2>Create</h2>
-
-<h4>UserOrder</h4>
+<h2>Giỏ hàng của bạn</h2>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="OrderDate" class="control-label"></label>
-                <input asp-for="OrderDate" class="form-control" />
+                <input type="hidden" asp-for="OrderDate" value="@ViewData["OrderDate"]" class="form-control" id="orderDateInput" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ReceiverName" class="control-label"></label>
+                <label asp-for="ReceiverName" class="control-label">Tên người nhận</label>
                 <input asp-for="ReceiverName" class="form-control" />
                 <span asp-validation-for="ReceiverName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label asp-for="PhoneNumber" class="control-label">Số điện thoại người nhận</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
+                <label asp-for="Address" class="control-label">Địa chỉ</label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PaymentMethod" class="control-label"></label>
+                <label asp-for="PaymentMethod" class="control-label">Phương thức thanh toán</label>
                 <input asp-for="PaymentMethod" class="form-control" />
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
@@ -44,30 +48,93 @@
             </div>
             <div class="form-group">
                 <label asp-for="ShippingFee" class="control-label"></label>
-                <input asp-for="ShippingFee" class="form-control" />
+                <input type="hidden" asp-for="ShippingFee" value=0 class="form-control" id="shippingFeeInput" />
                 <span asp-validation-for="ShippingFee" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalValue" class="control-label"></label>
-                <input asp-for="TotalValue" class="form-control" />
+                <input type="hidden" asp-for="TotalValue" value="@ViewBag.CartTotalValue" class="form-control" />
                 <span asp-validation-for="TotalValue" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input asp-for="IsDone" /> @Html.DisplayNameFor(model => model.IsDone)
+                        <input type="hidden" asp-for="IsDone"/>
                     </label>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AccountId" class="control-label"></label>
-                <select asp-for="AccountId" class ="form-control" asp-items="ViewBag.AccountId"></select>
+            <div class="form-group" hidden>
+                <input type="hidden" asp-for="AccountId" value="@ViewData["AccountId"]" class="form-control" />
+                <span asp-validation-for="AccountId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Đặt hàng" class="primary-btn order-submit" />
             </div>
         </form>
+
+
     </div>
+    <!-- Order Details -->
+    <div class="col-md-7 order-details">
+        <div class="section-title text-center">
+            <h3 class="title">Your Order</h3>
+        </div>
+        <div class="order-summary">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Hình ảnh
+                        </th>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                        <th>
+                            Số lượng
+                        </th>
+                        <th>
+                            Giá trị
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (listCartDetail is null)
+                    {
+                        <h2>Error</h2>
+                    }
+                    else
+                    {
+                        @foreach (var item in listCartDetail)
+                        {
+                            <tr>
+                                <td>
+                                    <img style="width:60%" src="@item.Product.PhotoURL" alt="" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+            <div class="order-col">
+                <div>Shiping</div>
+                <div><strong>FREE</strong></div>
+            </div>
+            <div class="order-col">
+                <div><strong>TOTAL</strong></div>
+                <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+            </div>
+        </div>
+    </div>
+    <!-- /Order Details -->
 </div>
 
 <div>

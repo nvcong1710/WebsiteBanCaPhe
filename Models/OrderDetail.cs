@@ -8,6 +8,9 @@ namespace WebsiteBanCaPhe.Models
     {
         [Key]
         public int OrderDetailId { get; set; }
+        [ForeignKey("UserOrder")]
+        public int OrderId { get; set; }
+        public UserOrder? UserOrder { get; set; }
 
         [ForeignKey("Product")]
         public int ProductId { get; set; }

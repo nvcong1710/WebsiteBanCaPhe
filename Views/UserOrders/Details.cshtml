@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    var OrderDetailList = ViewData["OrderDetailList"] as List<OrderDetail>;
 }
 
 <h2>Details</h2>
@@ -71,8 +72,72 @@
             @Html.DisplayFor(model => model.Account.FullName)
         </dd>
     </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<!-- Order Details -->
+<div class="col-md-7 order-details">
+    <div class="section-title text-center">
+        <h3 class="title">Your Order</h3>
+    </div>
+    <div class="order-summary">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Hình ảnh
+                    </th>
+                    <th>
+                        Tên sản phẩm
+                    </th>
+                    <th>
+                        Số lượng
+                    </th>
+                    <th>
+                        Giá trị
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (OrderDetailList is null)
+                {
+                    <h2>Error</h2>
+                }
+                else
+                {
+                    @foreach (var item in OrderDetailList)
+                    {
+                        <tr>
+                            <td>
+                                <img style="width:60%" src="@item.Product.PhotoURL" alt="" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalPrice)
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+        <div class="order-col">
+            <div>Shiping</div>
+            <div><strong>FREE</strong></div>
+        </div>
+        <div class="order-col">
+            <div><strong>TOTAL</strong></div>
+            <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+        </div>
+    </div>
 </div>
+<!-- /Order Details -->
+
