@@ -36,14 +36,23 @@ namespace WebsiteBanCaPhe.Controllers
                 return NotFound();
             }
 
+            var accountId = HttpContext.Session.GetString("AccountId");
+            var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+
             var userOrder = await _context.UserOrder
                 .Include(u => u.Account)
                 .FirstOrDefaultAsync(m => m.OrderId == id);
+
+            var orderDetailList = _context.OrderDetail
+                .Include(o=>o.Product)
+                .Include(o=>o.UserOrder)
+                .Where(o => o.OrderId == id);
             if (userOrder == null)
             {
                 return NotFound();
             }
 
+            ViewData["OrderDetailList"] = await orderDetailList.ToListAsync();
             return View(userOrder);
         }
 
@@ -70,13 +79,53 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         // POST: UserOrders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderId,OrderDate,ReceiverName,PhoneNumber,Address,PaymentMethod,Note,ShippingFee,TotalValue,IsDone,AccountId")] UserOrder userOrder)
         {
+            var accountId = HttpContext.Session.GetString("AccountId");
+            var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+            var cartId = cart.CartId;
+
+            var listCartDetail = _context.CartDetail
+                .Include(c => c.Cart)
+                .Include(c => c.Product)
+                .Where(c => c.CartId == cartId);
+            foreach (var cartDetail in listCartDetail)
+            {
+                var product = await _context.Product.FindAsync(cartDetail.ProductId);
+
+                // Check if product quantity is less than order quantity
+                if (product.Quantity < cartDetail.Quantity)
+                {
+                    // Return error message to view
+                    ViewBag.ErrorMessage = "Số lượng sản phẩm không đủ để hoàn thành đơn hàng.";
+                    return View(userOrder);
+                }
+
+                
+            }
             _context.Add(userOrder);
+            await _context.SaveChangesAsync();
+
+            foreach (var cartDetail in listCartDetail)
+            {
+                var product = await _context.Product.FindAsync(cartDetail.ProductId);
+
+                // Thêm sản phẩm vào OrderDetail
+                var orderDetail = new OrderDetail
+                {
+                    OrderId = userOrder.OrderId,
+                    ProductId = cartDetail.ProductId,
+                    Quantity = cartDetail.Quantity,
+                    TotalPrice = cartDetail.TotalPrice
+                };
+                //Cập nhật số lượng sản phẩm trong kho
+                product.Quantity -= orderDetail.Quantity;
+                _context.OrderDetail.Add(orderDetail);
+            }
+            //Xoá sản phẩm trong giỏ hàng
+            _context.CartDetail.RemoveRange(listCartDetail);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

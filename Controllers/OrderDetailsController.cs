@@ -22,7 +22,9 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: OrderDetails
         public async Task<IActionResult> Index()
         {
-            var websiteBanCaPheContext = _context.OrderDetail.Include(o => o.Product);
+            var websiteBanCaPheContext = _context.OrderDetail
+                .Include(o => o.Product)
+                .Include(o => o.UserOrder);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -36,6 +38,7 @@ namespace WebsiteBanCaPhe.Controllers
 
             var orderDetail = await _context.OrderDetail
                 .Include(o => o.Product)
+                .Include(o => o.UserOrder)
                 .FirstOrDefaultAsync(m => m.OrderDetailId == id);
             if (orderDetail == null)
             {
@@ -48,7 +51,8 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: OrderDetails/Create
         public IActionResult Create()
         {
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch");
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName");
+            ViewData["OrderId"] = new SelectList(_context.UserOrder, "OrderId", "OrderId");
             return View();
         }
 
@@ -57,7 +61,7 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderDetailId,ProductId,Quantity,TotalPrice")] OrderDetail orderDetail)
+        public async Task<IActionResult> Create([Bind("OrderDetailId,OrderId,ProductId,Quantity,TotalPrice")] OrderDetail orderDetail)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +69,8 @@ namespace WebsiteBanCaPhe.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", orderDetail.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", orderDetail.ProductId);
+            ViewData["OrderId"] = new SelectList(_context.UserOrder, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -82,7 +87,8 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", orderDetail.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", orderDetail.ProductId);
+            ViewData["OrderId"] = new SelectList(_context.UserOrder, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -91,7 +97,7 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderDetailId,ProductId,Quantity,TotalPrice")] OrderDetail orderDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderDetailId,OrderId,ProductId,Quantity,TotalPrice")] OrderDetail orderDetail)
         {
             if (id != orderDetail.OrderDetailId)
             {
@@ -118,7 +124,8 @@ namespace WebsiteBanCaPhe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", orderDetail.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", orderDetail.ProductId);
+            ViewData["OrderId"] = new SelectList(_context.UserOrder, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -132,6 +139,7 @@ namespace WebsiteBanCaPhe.Controllers
 
             var orderDetail = await _context.OrderDetail
                 .Include(o => o.Product)
+                .Include(o => o.UserOrder)
                 .FirstOrDefaultAsync(m => m.OrderDetailId == id);
             if (orderDetail == null)
             {
