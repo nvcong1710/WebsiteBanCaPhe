@@ -33,6 +33,8 @@ namespace WebsiteBanCaPhe.Models
         [Required]
         public bool IsDone { get; set; } = false;
 
+        public bool IsPaid { get; set; } = false;
+
         [ForeignKey("Account")]
         public int AccountId { get; set; }
         public virtual Account? Account { get; set; }

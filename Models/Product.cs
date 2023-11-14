@@ -29,6 +29,8 @@ namespace WebsiteBanCaPhe.Models
         [Required] 
         public int Quantity { get; set; }
 
+        public int QuantitySold { get; set; } = 0;
+
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public virtual Category? Category { get; set; }
