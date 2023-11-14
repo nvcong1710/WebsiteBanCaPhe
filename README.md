@@ -5,38 +5,38 @@
 
 ## Tính năng cho người dùng
 
-### Trang đăng kí và đăng nhập
+**Trang đăng kí và đăng nhập**
 
-### Trang chỉnh sửa thông tin người dùng
+**Trang chỉnh sửa thông tin người dùng**
 
-### Trang Sản phẩm: hiển thị danh sách sản phẩm
+**Trang Sản phẩm: hiển thị danh sách sản phẩm**
 
-### Các trang sản phẩm theo danh mục
+**Các trang sản phẩm theo danh mục**
 
-### Trang chi tiết giỏ hàng
+**Trang chi tiết giỏ hàng**
 - Thêm và xoá sản phẩm trong giỏ hàng
 
-### Trang nhập form đơn hàng
+**Trang nhập form đơn hàng**
 - Nhập thông tin đơn hàng
 
 ## Tính năng cho ADMIN
 
-### Trang chủ
+**Trang chủ**
 
-### Trang quản lý danh mục
+**Trang quản lý danh mục**
 - Tạo mới danh mục và chỉnh sửa tên danh mục
 
-### Trang quản lý sản phẩm
+**Trang quản lý sản phẩm**
 - Tạo mới sản phẩm và xoá sản phẩm nếu không có trong giỏ hàng (số lượng = 0)
 - Sửa thông tin sản phẩm
 
-### Trang quản lý kho hàng
+**Trang quản lý kho hàng**
 - Hiển thị danh sách sản phẩm và số lượng sản phẩm, cập nhật số lượng sản phẩm
 
-### Trang quản lý đơn hàng
+**Trang quản lý đơn hàng**
 - Xác nhận đơn hàng đã hoàn thành hoặc chưa
 
-### Trang lập báo cáo
+**Trang lập báo cáo**
 - Báo cáo doanh thu tháng
 - Báo cáo tồn kho
 
