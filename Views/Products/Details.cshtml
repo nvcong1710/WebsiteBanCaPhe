@@ -62,7 +62,7 @@
 
 						<div class="add-to-cart">
 							<a href="/CartDetails/AddToCart/@Model.ProductId">
-							<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+							<button class="add-to-cart-btn" @((@Model.Quantity == 0) ? "disabled" : "")><i class="fa fa-shopping-cart"></i> add to cart</button>
 							</a>
 						</div>
 
