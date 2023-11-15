@@ -16,7 +16,8 @@ namespace WebsiteBanCaPhe.Models
         public string? ReceiverName { get; set; }
 
         [Required]
-        public string? PhoneNumber { get; set; }
+		[RegularExpression(@"^0[0-9]{9,10}$", ErrorMessage = "Số điện thoại không hợp lệ")]
+		public string? PhoneNumber { get; set; }
 
         [Required]
         public string? Address { get; set; }
