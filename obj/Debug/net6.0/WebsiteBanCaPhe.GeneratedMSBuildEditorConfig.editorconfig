@@ -5,204 +5,253 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteBanCaPhe
 build_property.RootNamespace = WebsiteBanCaPhe
-build_property.ProjectDir = D:\TestGit\New folder\WebsiteBanCaPhe\
+build_property.ProjectDir = D:\document\StudyMaterial\session1year3\httt\Đồ án\New folder (2)\WebsiteBanCaPhe\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\TestGit\New folder\WebsiteBanCaPhe
+build_property.MSBuildProjectDirectory = D:\document\StudyMaterial\session1year3\httt\Đồ án\New folder (2)\WebsiteBanCaPhe
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminOrders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5PcmRlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminProducts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminProducts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminProducts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminProducts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/AdminProducts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQWRkVG9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Home/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Feedbacks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Feedbacks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Feedbacks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Feedbacks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Feedbacks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/IntroducePage/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/IntroducePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50cm9kdWNlUGFnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/ProductByCategory/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/ProductByCategory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEJ5Q2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Products/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Products/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Report/HomeReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEhvbWVSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Report/SalesReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFNhbGVzUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Report/WarehouseReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFdhcmVob3VzZVJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2QmFyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Shared/_LayoutBeforeLogin.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/_LayoutBeforeLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCZWZvcmVMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Warehouse/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestGit/New folder/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
+[D:/document/StudyMaterial/session1year3/httt/Đồ án/New folder (2)/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-md5lbm1x4i

@@ -1,0 +1,51 @@
+﻿@model WebsiteBanCaPhe.Models.Feedback
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Feedback</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Star)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Star)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedbackDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FeedbackDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Account.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FeedbackId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

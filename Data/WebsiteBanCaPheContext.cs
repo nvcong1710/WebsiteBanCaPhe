@@ -27,5 +27,7 @@ namespace WebsiteBanCaPhe.Data
         public DbSet<WebsiteBanCaPhe.Models.OrderDetail>? OrderDetail { get; set; }
 
         public DbSet<WebsiteBanCaPhe.Models.Product>? Product { get; set; }
+
+        public DbSet<WebsiteBanCaPhe.Models.Feedback>? Feedback { get; set; }
     }
 }

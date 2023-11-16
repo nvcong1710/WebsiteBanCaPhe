@@ -11,7 +11,7 @@ namespace WebsiteBanCaPhe.Models
         public int CartId { get; set; }
 		
         [BindNever]
-		public decimal TotalValue { get; set; }
+		public long TotalValue { get; set; }
 
         [ForeignKey("Account")]
         public int AccountId { get; set; }

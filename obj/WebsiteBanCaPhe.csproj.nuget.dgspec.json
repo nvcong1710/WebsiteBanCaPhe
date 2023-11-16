@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TestGit\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
   },
   "projects": {
-    "D:\\TestGit\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TestGit\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
         "projectName": "WebsiteBanCaPhe",
-        "projectPath": "D:\\TestGit\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
-        "packagesPath": "C:\\Users\\84348\\.nuget\\packages\\",
-        "outputPath": "D:\\TestGit\\New folder\\WebsiteBanCaPhe\\obj\\",
+        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\84348\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +66,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
