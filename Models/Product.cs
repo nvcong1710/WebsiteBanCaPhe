@@ -27,9 +27,9 @@ namespace WebsiteBanCaPhe.Models
         public long Price { get; set; }
 
         [Required]
-        public int Quantity { get; set; }
+        public long Quantity { get; set; }
 
-        public int QuantitySold { get; set; } = 0;
+        public long QuantitySold { get; set; } = 0;
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

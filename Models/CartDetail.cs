@@ -19,7 +19,7 @@ namespace WebsiteBanCaPhe.Models
 
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Số lượng phải lớn hơn 0")]
-        public int Quantity { get; set; }
+        public long Quantity { get; set; }
 
 		[BindNever]
 		public long TotalPrice { get; set; }

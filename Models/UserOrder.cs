@@ -27,7 +27,7 @@ namespace WebsiteBanCaPhe.Models
 
         public string? Note { get; set; } = "không có ghi chú";
 
-        public decimal ShippingFee { get; set; } = 0;
+        public long ShippingFee { get; set; } = 0;
 
         public long TotalValue { get; set; } = 0;
 
