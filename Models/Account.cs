@@ -12,10 +12,12 @@ namespace WebsiteBanCaPhe.Models
         public int AccountId { get; set; }
 
         [Required]
-        public string? PhoneNumber { get; set; }
+		[RegularExpression(@"^0[0-9]{9,10}$", ErrorMessage = "Số điện thoại không hợp lệ")]
+		public string? PhoneNumber { get; set; }
 
         [Required]
-        public string? Password { get; set; }
+		[RegularExpression(@"^.{6,}$", ErrorMessage = "Mật khẩu chứa ít nhất 6 kí tự")]
+		public string? Password { get; set; }
 
         [Required]
         public string? FullName { get; set; }
