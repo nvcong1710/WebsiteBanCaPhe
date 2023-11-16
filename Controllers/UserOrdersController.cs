@@ -99,7 +99,8 @@ namespace WebsiteBanCaPhe.Controllers
                 if (product.Quantity < cartDetail.Quantity)
                 {
                     // Return error message to view
-                    ViewBag.ErrorMessage = "Số lượng sản phẩm không đủ để hoàn thành đơn hàng.";
+                    String error = "Số lượng sản phẩm " + product.ProductName.ToString() + " không đủ để hoàn thành đơn hàng.";
+                    ViewBag.ErrorMessage = error;
                     return View(userOrder);
                 }
 

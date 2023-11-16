@@ -71,6 +71,33 @@
         <dd>
             @Html.DisplayFor(model => model.Account.FullName)
         </dd>
+        <dt>
+            Trạng thái thanh toán
+        </dt>
+        <dd>
+            @if (Model.IsPaid == false)
+            {
+                @:Chưa thanh toán
+            }
+            else
+            {
+                @:Đã thanh toán
+            }
+        </dd>
+        <dt>
+            Trạng thái nhận hàng
+        </dt>
+        <dd>
+            @if (Model.IsDone == false)
+            {
+                @:Chưa nhận hàng
+            }
+            else
+            {
+                @:Đã nhận hàng
+            }
+        </dd>
+        
     </dl>
 
     <div>
@@ -140,4 +167,3 @@
     </div>
 </div>
 <!-- /Order Details -->
-

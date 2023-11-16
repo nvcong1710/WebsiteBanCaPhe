@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo</title>
+    <style>
+        button {
+            padding: 8px;
+            margin: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        .date-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form asp-controller="Report" asp-action="HomeReport" method="post">
+        <label for="reportType">Chọn loại báo cáo:</label>
+        <select name="reportType" id="report-type">
+            <option value=0>Báo cáo doanh thu</option>
+            <option value=1>Báo cáo tồn kho</option>
+        </select>
+
+        <div class="date-inputs">
+            <label for="from-date">Từ ngày:</label>
+            <input type="date" id="from-date" name="fromDate" />
+
+            <label for="to-date">Tới ngày:</label>
+            <input type="date" id="to-date" name="toDate" />
+        </div>
+
+        <br>
+
+        <button type="submit" id="create-report">Tạo báo cáo</button>
+    </form>
+    
+</body>
+</html>

@@ -38,9 +38,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="PaymentMethod" class="control-label">Phương thức thanh toán</label>
-                <input asp-for="PaymentMethod" class="form-control" />
+                <select asp-for="PaymentMethod" class="form-control">
+                    <option value="Momo">Momo</option>
+                    <option value="Thanh toán ngân hàng">Thanh toán ngân hàng</option>
+                    <option value="Ship COD">Ship COD</option>
+                </select>
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Note" class="control-label"></label>
                 <input asp-for="Note" class="form-control" />
@@ -59,6 +64,13 @@
                 <div class="checkbox">
                     <label>
                         <input type="hidden" asp-for="IsDone"/>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input type="hidden" asp-for="IsPaid" />
                     </label>
                 </div>
             </div>

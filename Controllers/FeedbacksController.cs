@@ -10,87 +10,90 @@ using WebsiteBanCaPhe.Models;
 
 namespace WebsiteBanCaPhe.Controllers
 {
-    public class CategoriesController : Controller
+    public class FeedbacksController : Controller
     {
         private readonly WebsiteBanCaPheContext _context;
 
-        public CategoriesController(WebsiteBanCaPheContext context)
+        public FeedbacksController(WebsiteBanCaPheContext context)
         {
             _context = context;
         }
 
-        // GET: Categories
+        // GET: Feedbacks
         public async Task<IActionResult> Index()
         {
-              return _context.Category != null ? 
-                          View(await _context.Category.ToListAsync()) :
-                          Problem("Entity set 'WebsiteBanCaPheContext.Category'  is null.");
+            var websiteBanCaPheContext = _context.Feedback.Include(f => f.Account);
+            return View(await websiteBanCaPheContext.ToListAsync());
         }
 
-        // GET: Categories/Details/5
+        // GET: Feedbacks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Category == null)
+            if (id == null || _context.Feedback == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category
-                .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
+            var feedback = await _context.Feedback
+                .Include(f => f.Account)
+                .FirstOrDefaultAsync(m => m.FeedbackId == id);
+            if (feedback == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(feedback);
         }
 
-        // GET: Categories/Create
+        // GET: Feedbacks/Create
         public IActionResult Create()
         {
+            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName");
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Feedbacks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoryId,CategoryName")] Category category)
+        public async Task<IActionResult> Create([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                _context.Add(feedback);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            return View(feedback);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Feedbacks/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Category == null)
+            if (id == null || _context.Feedback == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category.FindAsync(id);
-            if (category == null)
+            var feedback = await _context.Feedback.FindAsync(id);
+            if (feedback == null)
             {
                 return NotFound();
             }
-            return View(category);
+            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            return View(feedback);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Feedbacks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("FeedbackId,Content,Star,FeedbackDate,AccountId")] Feedback feedback)
         {
-            if (id != category.CategoryId)
+            if (id != feedback.FeedbackId)
             {
                 return NotFound();
             }
@@ -99,12 +102,12 @@ namespace WebsiteBanCaPhe.Controllers
             {
                 try
                 {
-                    _context.Update(category);
+                    _context.Update(feedback);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoryExists(category.CategoryId))
+                    if (!FeedbackExists(feedback.FeedbackId))
                     {
                         return NotFound();
                     }
@@ -115,49 +118,51 @@ namespace WebsiteBanCaPhe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            return View(feedback);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Feedbacks/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Category == null)
+            if (id == null || _context.Feedback == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category
-                .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
+            var feedback = await _context.Feedback
+                .Include(f => f.Account)
+                .FirstOrDefaultAsync(m => m.FeedbackId == id);
+            if (feedback == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(feedback);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Feedbacks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Category == null)
+            if (_context.Feedback == null)
             {
-                return Problem("Entity set 'WebsiteBanCaPheContext.Category'  is null.");
+                return Problem("Entity set 'WebsiteBanCaPheContext.Feedback'  is null.");
             }
-            var category = await _context.Category.FindAsync(id);
-            if (category != null)
+            var feedback = await _context.Feedback.FindAsync(id);
+            if (feedback != null)
             {
-                _context.Category.Remove(category);
+                _context.Feedback.Remove(feedback);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoryExists(int id)
+        private bool FeedbackExists(int id)
         {
-          return (_context.Category?.Any(e => e.CategoryId == id)).GetValueOrDefault();
+          return (_context.Feedback?.Any(e => e.FeedbackId == id)).GetValueOrDefault();
         }
     }
 }

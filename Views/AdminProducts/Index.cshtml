@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_LayoutAdmin";
 }
 
 <h2>Index</h2>
@@ -16,22 +17,22 @@
                 Tên sản phẩm
             </th>
             <th>
-                Mô tả sản phẩm
+                Mô tả
             </th>
             <th>
-                Đường dẫn hình ảnh sản phẩm
+                Hình ảnh
             </th>
             <th>
-                Xuất xứ
+                Nguồn gốc
             </th>
             <th>
                 Thương hiệu
             </th>
             <th>
-                Giá
+                Giá bán
             </th>
             <th>
-                Số lượng
+                Số lượng tồn kho
             </th>
             <th>
                 Danh mục
@@ -49,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.ProductDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhotoURL)
+                <img style="height:90px" src=@item.PhotoURL alt="" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Origin)
@@ -67,9 +68,9 @@
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Xoá</a>
             </td>
         </tr>
 }

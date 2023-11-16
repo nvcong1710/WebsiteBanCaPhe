@@ -1,0 +1,153 @@
+﻿@model IEnumerable<WebsiteBanCaPhe.Models.UserOrder>
+
+@{
+    int reportType = (int)ViewData["reportType"];
+    DateTime toDate = (DateTime)ViewData["toDate"];
+    DateTime fromDate = (DateTime)ViewData["fromDate"];
+    long totalRevenue = (long)ViewData["TotalRevenue"];
+    Layout = "_LayoutAdmin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo</title>
+    <style>
+        button {
+            padding: 8px;
+            margin: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        th, td, tr, thead, tbody {
+            border: solid 2px #000;
+        }
+    </style>
+</head>
+<body>
+    <form asp-controller="Report" asp-action="HomeReport" method="post">
+        <label for="reportType">Chọn loại báo cáo:</label>
+        <select name="reportType" id="report-type">
+            @if(reportType == 0)
+            {
+                <option value=0 selected>Báo cáo doanh thu</option>
+                <option value=1>Báo cáo tồn kho</option>
+            }
+            else
+            {
+                <option value=0>Báo cáo doanh thu</option>
+                <option value=1 selected>Báo cáo tồn kho</option>
+            }
+            
+        </select>
+
+        <div class="date-inputs">
+            <label for="from-date">Từ ngày:</label>
+            <input type="date" id="from-date" value=@fromDate.ToString("yyyy-MM-dd") name="fromDate" />
+
+            <label for="to-date">Tới ngày:</label>
+            <input type="date" id="to-date" value=@toDate.ToString("yyyy-MM-dd") name="toDate" />
+        </div>
+
+        <br>
+
+        <button type="submit" id="create-report">Tạo báo cáo</button>
+    </form>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style ="border:solid 1px #000!important">
+                        Ngày đặt
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Người nhận
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        SĐT
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Địa chỉ
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Phí ship
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Giá trị
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Trạng thái đơn hàng
+                    </th>
+                    <th style="border:solid 1px #000!important">
+                        Trạng thái thanh toán
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReceiverName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShippingFee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalValue)
+                        </td>
+                        @if (item.IsDone == false)
+                        {
+                            <td style="background:#fafc89">
+                                Chưa nhận hàng
+                            </td>
+                            
+                        }
+                        else
+                        {
+                            <td style="background:#b1d4ff">
+                                Đã nhận hàng
+                            </td>
+                        }
+                       
+                        @if (item.IsPaid == false)
+                        {
+                            <td style="background:#fafc89">
+                            Chưa thanh toán
+                        </td>
+                        }
+                        else
+                        {
+                            <td style="background:#b1d4ff">
+                            Đã thanh toán
+                        </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h2 style="color:red">Tổng doanh thu: @totalRevenue</h2>
+    </div>
+</body>
+</html>
+
+

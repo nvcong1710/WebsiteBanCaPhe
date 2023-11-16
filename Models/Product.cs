@@ -8,28 +8,28 @@ namespace WebsiteBanCaPhe.Models
         [Key]
         public int ProductId { get; set; }
 
-        [Required] 
+        [Required]
         public string? ProductName { get; set; }
 
-        [Required] 
+        [Required]
         public string? ProductDescription { get; set; }
 
-        [Required] 
+        [Required]
         public string? PhotoURL { get; set; }
 
-        [Required] 
+        [Required]
         public string? Origin { get; set; }
 
-        [Required] 
+        [Required]
         public string? Branch { get; set; }
 
-        [Required] 
-        public decimal Price { get; set; }
+        [Required]
+        public long Price { get; set; }
 
-        [Required] 
-        public int Quantity { get; set; }
+        [Required]
+        public long Quantity { get; set; }
 
-        public int QuantitySold { get; set; } = 0;
+        public long QuantitySold { get; set; } = 0;
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

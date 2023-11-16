@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebsiteBanCaPhe.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutAdmin";
+}
+
+<h2>Quản lý kho</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Hình ảnh
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Danh mục
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+           
+            <tr>
+                 <form asp-action="Index" method="post">
+                <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    <img style="height:90px" src="@item.PhotoURL" alt="" />
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <div class="form-group" style="margin:0px">
+                        <input type="hidden" asp-for="@item.ProductId" name="id" class="form-control" />
+                        <span asp-validation-for="@item.ProductId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin:0px">
+                        <input asp-for="@item.Quantity" name="newQuantity" class="form-control" />
+                        <span asp-validation-for="@item.Quantity" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </td>
+                
+                </form>
+            </tr>
+        }
+    </tbody>
+</table>
+

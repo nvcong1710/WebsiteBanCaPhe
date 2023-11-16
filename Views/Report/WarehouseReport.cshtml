@@ -1,0 +1,102 @@
+﻿@model IEnumerable<WebsiteBanCaPhe.Models.Product>
+
+@{
+    int reportType = (int)ViewData["reportType"];
+    DateTime toDate = (DateTime)ViewData["toDate"];
+    DateTime fromDate = (DateTime)ViewData["fromDate"];
+    Layout = "_LayoutAdmin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo</title>
+    <style>
+        button {
+            padding: 8px;
+            margin: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        th, td, tr, thead, tbody {
+            border: solid 2px #000;
+        }
+    </style>
+</head>
+<body>
+    <form asp-controller="Report" asp-action="HomeReport" method="post">
+        <label for="reportType">Chọn loại báo cáo:</label>
+        <select name="reportType" id="report-type">
+            @if (reportType == 0)
+            {
+                <option value=0 selected>Báo cáo doanh thu</option>
+                <option value=1>Báo cáo tồn kho</option>
+            }
+            else
+            {
+                <option value=0>Báo cáo doanh thu</option>
+                <option value=1 selected>Báo cáo tồn kho</option>
+            }
+
+        </select>
+
+        <div class="date-inputs">
+            <label for="from-date">Từ ngày:</label>
+            <input type="date" id="from-date" value=@fromDate.ToString("yyyy-MM-dd") name="fromDate" />
+
+            <label for="to-date">Tới ngày:</label>
+            <input type="date" id="to-date" value=@toDate.ToString("yyyy-MM-dd") name="toDate" />
+        </div>
+
+        <br>
+
+        <button type="submit" id="create-report">Tạo báo cáo</button>
+    </form>
+    <div>
+        <table class="table" style="border:solid 1px #000!important">
+            <thead style="border:solid 1px #000!important">
+                <tr style="border:solid 1px #000!important">
+                    <th style="border:solid 1px #000!important">
+                        Sản phẩm
+                    </th>
+                    <th style ="border:solid 1px #000!important">
+                        Đã bán
+                    </th>
+                    <th style ="border:solid 1px #000!important">
+                        Còn lại
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.QuantitySold)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
+
+
