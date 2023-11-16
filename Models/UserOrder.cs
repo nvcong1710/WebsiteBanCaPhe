@@ -16,8 +16,8 @@ namespace WebsiteBanCaPhe.Models
         public string? ReceiverName { get; set; }
 
         [Required]
-		[RegularExpression(@"^0[0-9]{9,10}$", ErrorMessage = "Số điện thoại không hợp lệ")]
-		public string? PhoneNumber { get; set; }
+        [RegularExpression(@"^0[0-9]{9,10}$", ErrorMessage = "Số điện thoại không hợp lệ")]
+        public string? PhoneNumber { get; set; }
 
         [Required]
         public string? Address { get; set; }
@@ -29,7 +29,7 @@ namespace WebsiteBanCaPhe.Models
 
         public decimal ShippingFee { get; set; } = 0;
 
-        public decimal TotalValue { get; set; } = 0;
+        public long TotalValue { get; set; } = 0;
 
         [Required]
         public bool IsDone { get; set; } = false;

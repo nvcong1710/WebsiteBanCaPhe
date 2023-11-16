@@ -19,7 +19,7 @@ namespace WebsiteBanCaPhe.Models
         [Required]
         public int Quantity { get; set; }
 
-		[BindNever]
-		public decimal TotalPrice { get; set; }
+        [BindNever]
+        public long TotalPrice { get; set; }
     }
 }

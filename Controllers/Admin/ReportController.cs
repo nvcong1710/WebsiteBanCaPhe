@@ -40,7 +40,7 @@ namespace WebsiteBanCaPhe.Controllers.Admin
             ViewData["fromDate"] = fromDate;
             ViewData["toDate"] = toDate;
             var listOrder = await _context.UserOrder.Include(u => u.Account).Where(u => u.OrderDate >= fromDate && u.OrderDate <= toDate).ToListAsync();
-            decimal totalRevenue = 0;
+            long totalRevenue = 0;
 
             foreach (var order in listOrder)
             {

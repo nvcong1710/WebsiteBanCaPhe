@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebsiteBanCaPhe.Models.Feedback>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Star)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Star)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account.FullName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FeedbackId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FeedbackId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FeedbackId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
