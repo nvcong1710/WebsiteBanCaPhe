@@ -1,17 +1,11 @@
 ﻿@model IEnumerable<WebsiteBanCaPhe.Models.Feedback>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Index";
 }
 
-<!DOCTYPE html>
+<h2>Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -29,6 +23,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
             </th>
             <th></th>
         </tr>
@@ -49,6 +46,9 @@
                 @Html.DisplayFor(modelItem => item.Account.FullName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Product.Branch)
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.FeedbackId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.FeedbackId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.FeedbackId">Delete</a>
@@ -57,5 +57,3 @@
 }
     </tbody>
 </table>
-</body>
-</html>
