@@ -5,165 +5,168 @@
     var OrderDetailList = ViewData["OrderDetailList"] as List<OrderDetail>;
 }
 
-<h2>Details</h2>
+<h2>Chi tiết đơn hàng</h2>
 
-<div>
-    <h4>UserOrder</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Ngày đặt
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.OrderDate)
-        </dd>
-        <dt>
-            Người nhận
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ReceiverName)
-        </dd>
-        <dt>
-            Số điện thoại
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt>
-            Địa chỉ
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt>
-            Phương thức thanh toán
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PaymentMethod)
-        </dd>
-        <dt>
-            Ghi chú
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Note)
-        </dd>
-        <dt>
-            Phí ship
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ShippingFee)
-        </dd>
-        <dt>
-            Tổng giá trị
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TotalValue)
-        </dd>
-        <dt>
-           Xác nhận
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsDone)
-        </dd>
-        <dt>
-            Tài khoản
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Account.FullName)
-        </dd>
-        <dt>
-            Trạng thái thanh toán
-        </dt>
-        <dd>
-            @if (Model.IsPaid == false)
-            {
-                @:Chưa thanh toán
-            }
-            else
-            {
-                @:Đã thanh toán
-            }
-        </dd>
-        <dt>
-            Trạng thái nhận hàng
-        </dt>
-        <dd>
-            @if (Model.IsDone == false)
-            {
-                @:Chưa nhận hàng
-            }
-            else
-            {
-                @:Đã nhận hàng
-            }
-        </dd>
-        
-    </dl>
-
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
-        <a asp-action="Index">Back to List</a>
-    </div>
-</div>
-<!-- Order Details -->
-<div class="col-md-7 order-details">
-    <div class="section-title text-center">
-        <h3 class="title">Your Order</h3>
-    </div>
-    <div class="order-summary">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Hình ảnh
-                    </th>
-                    <th>
-                        Tên sản phẩm
-                    </th>
-                    <th>
-                        Số lượng
-                    </th>
-                    <th>
-                        Giá trị
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (OrderDetailList is null)
+<div class="row">
+    <div class="col-md-6">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Ngày đặt
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderDate)
+            </dd>
+            <dt>
+                Người nhận
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReceiverName)
+            </dd>
+            <dt>
+                Số điện thoại
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt>
+                Địa chỉ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt>
+                Phương thức thanh toán
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PaymentMethod)
+            </dd>
+            <dt>
+                Ghi chú
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+            <dt>
+                Phí ship
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ShippingFee)
+            </dd>
+            <dt>
+                Tổng giá trị
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalValue)
+            </dd>
+            <dt>
+                Xác nhận
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsDone)
+            </dd>
+            <dt>
+                Tài khoản
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Account.FullName)
+            </dd>
+            <dt>
+                Trạng thái thanh toán
+            </dt>
+            <dd>
+                @if (Model.IsPaid == false)
                 {
-                    <h2>Error</h2>
+                    @:Chưa thanh toán
                 }
                 else
                 {
-                    @foreach (var item in OrderDetailList)
-                    {
-                        <tr>
-                            <td>
-                                <img style="width:60%" src="@item.Product.PhotoURL" alt="" />
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Product.ProductName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Quantity)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TotalPrice)
-                            </td>
-                        </tr>
-                    }
+                    @:Đã thanh toán
                 }
+            </dd>
+            <dt>
+                Trạng thái nhận hàng
+            </dt>
+            <dd>
+                @if (Model.IsDone == false)
+                {
+                    @:Chưa nhận hàng
+                }
+                else
+                {
+                    @:Đã nhận hàng
+                }
+            </dd>
 
-            </tbody>
-        </table>
-        <div class="order-col">
-            <div>Shiping</div>
-            <div><strong>FREE</strong></div>
-        </div>
-        <div class="order-col">
-            <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+        </dl>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
         </div>
     </div>
+    <!-- Order Details -->
+    <div class="col-md-6 order-details">
+        <div class="section-title text-center">
+            <h3 class="title">Your Order</h3>
+        </div>
+        <div class="order-summary">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Hình ảnh
+                        </th>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                        <th>
+                            Số lượng
+                        </th>
+                        <th>
+                            Giá trị
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (OrderDetailList is null)
+                    {
+                        <h2>Error</h2>
+                    }
+                    else
+                    {
+                        @foreach (var item in OrderDetailList)
+                        {
+                            <tr>
+                                <td style="width:100px">
+                                    <img style="width:100%" src="@item.Product.PhotoURL" alt="" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+            <div class="order-col">
+                <div>Shiping</div>
+                <div><strong>FREE</strong></div>
+            </div>
+            <div class="order-col">
+                <div><strong>TOTAL</strong></div>
+                <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+            </div>
+        </div>
+    </div>
+    <!-- /Order Details -->
 </div>
-<!-- /Order Details -->
+
+

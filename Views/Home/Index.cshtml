@@ -5,51 +5,51 @@
 
 <!-- row -->
 <div class="row">
-	<!-- Products tab & slick -->
-	<div class="col-md-12">
-		<div class="row">
-			<div class="products-tabs">
-				<!-- tab -->
-				<div id="tab1" class="tab-pane active">
-					<div class="products-slick" data-nav="#slick-nav-1">
-						@foreach (var item in Model)
-						{
-							<!-- product -->
-						<div class="product">
-							<div class="product-img">
-								<img src="@item.PhotoURL" alt="">
-							</div>
-							<div class="product-body">
-									<h3 class="product-name"><a asp-controller = "Products" asp-action="Details" asp-route-id="@item.ProductId" >@item.ProductName</a></h3>
-								<h4 class="product-price">@item.Price</h4>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="product-btns">
-									<a href="/Products/Details/@item.ProductId">
-										<i class="fa fa-eye"></i>
-									</a>									
-								</div>
-							</div>
-								<a href="/CartDetails/AddToCart/@item.ProductId">
+    <!-- Products tab & slick -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="products-tabs">
+                <!-- tab -->
+                <div id="tab1" class="tab-pane active">
+                    <div class="products-slick" data-nav="#slick-nav-1">
+                        @foreach (var item in Model)
+                        {
+                            <!-- product -->
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="@item.PhotoURL" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a></h3>
+                                    <h4 class="product-price">@item.Price</h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="product-btns">
+                                        <a href="/Products/Details/@item.ProductId">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="/CartDetails/AddToCart/@item.ProductId">
                                     <div class="add-to-cart">
                                         <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
-								</a>
-						</div>
-						<!-- /product -->
-						}
-					</div>
-					<div id="slick-nav-1" class="products-slick-nav"></div>
-				</div>
-				<!-- /tab -->
-			</div>
-		</div>
-	</div>
-	<!-- Products tab & slick -->
+                                </a>
+                            </div>
+                            <!-- /product -->
+                        }
+                    </div>
+                    <div id="slick-nav-1" class="products-slick-nav"></div>
+                </div>
+                <!-- /tab -->
+            </div>
+        </div>
+    </div>
+    <!-- Products tab & slick -->
 </div>
 <!-- /row -->
