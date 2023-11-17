@@ -22,7 +22,7 @@ namespace WebsiteBanCaPhe.Controllers
         // GET: Feedbacks
         public async Task<IActionResult> Index()
         {
-            var websiteBanCaPheContext = _context.Feedback.Include(f => f.Account);
+            var websiteBanCaPheContext = _context.Feedback.Include(f => f.Account).Include(f => f.Product);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace WebsiteBanCaPhe.Controllers
 
             var feedback = await _context.Feedback
                 .Include(f => f.Account)
+                .Include(f => f.Product)
                 .FirstOrDefaultAsync(m => m.FeedbackId == id);
             if (feedback == null)
             {
@@ -49,6 +50,7 @@ namespace WebsiteBanCaPhe.Controllers
         public IActionResult Create()
         {
             ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName");
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch");
             return View();
         }
 
@@ -57,7 +59,7 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId")] Feedback feedback)
+        public async Task<IActionResult> Create([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId,ProductId")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +68,7 @@ namespace WebsiteBanCaPhe.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", feedback.ProductId);
             return View(feedback);
         }
 
@@ -83,6 +86,7 @@ namespace WebsiteBanCaPhe.Controllers
                 return NotFound();
             }
             ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", feedback.ProductId);
             return View(feedback);
         }
 
@@ -91,7 +95,7 @@ namespace WebsiteBanCaPhe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FeedbackId,Content,Star,FeedbackDate,AccountId")] Feedback feedback)
+        public async Task<IActionResult> Edit(int id, [Bind("FeedbackId,Content,Star,FeedbackDate,AccountId,ProductId")] Feedback feedback)
         {
             if (id != feedback.FeedbackId)
             {
@@ -119,6 +123,7 @@ namespace WebsiteBanCaPhe.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", feedback.ProductId);
             return View(feedback);
         }
 
@@ -132,6 +137,7 @@ namespace WebsiteBanCaPhe.Controllers
 
             var feedback = await _context.Feedback
                 .Include(f => f.Account)
+                .Include(f => f.Product)
                 .FirstOrDefaultAsync(m => m.FeedbackId == id);
             if (feedback == null)
             {

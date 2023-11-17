@@ -21,6 +21,10 @@ namespace WebsiteBanCaPhe.Models
         [ForeignKey("Account")]
         public int AccountId { get; set; }
         public Account? Account { get; set; }
+		[Required]
+		[ForeignKey("Product")]
+		public int ProductId { get; set; }
+		public Product? Product { get; set; }
 
-    }
+	}
 }
