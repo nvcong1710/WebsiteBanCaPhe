@@ -62,6 +62,7 @@
 
         <button type="submit" id="create-report">Tạo báo cáo</button>
     </form>
+    <a style="margin-bottom:20px" href="@Url.Action("WarehouseDownloadExcel", "Report", new { fromDate = ViewData["fromDate"], toDate = ViewData["toDate"] })" class="btn btn-primary">Download Excel</a>
     <div>
         <table class="table" style="border:solid 1px #000!important">
             <thead style="border:solid 1px #000!important">
@@ -98,5 +99,3 @@
     </div>
 </body>
 </html>
-
-

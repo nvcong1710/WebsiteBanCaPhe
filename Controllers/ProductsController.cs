@@ -30,6 +30,11 @@ namespace WebsiteBanCaPhe.Controllers
             var product = await _context.Product
                 .Include(p => p.Category)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
+            var feedbackList = await _context.Feedback
+                .Include(f=>f.Product)
+                .Include(f=>f.Account)
+                .Where(f=>f.ProductId == id).ToListAsync();
+            ViewData["FeedbackList"] = feedbackList;
             if (product == null)
             {
                 return NotFound();
@@ -41,6 +46,23 @@ namespace WebsiteBanCaPhe.Controllers
         private bool ProductExists(int id)
         {
           return (_context.Product?.Any(e => e.ProductId == id)).GetValueOrDefault();
+        }
+
+        //===================================
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateFeedback([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId,ProductId")] Feedback feedback)
+        {
+            var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId != null)
+            {
+                feedback.AccountId = int.Parse(accountId);
+            }
+            ViewData["AccountId"] = new SelectList(_context.Account, "AccountId", "FullName", feedback.AccountId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", feedback.ProductId);
+            _context.Add(feedback);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details", "Products", new { id = feedback.ProductId });
         }
     }
 }
