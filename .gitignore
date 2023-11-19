@@ -404,3 +404,7 @@ FodyWeavers.xsd
 *.cache
 *.json
 *.props
+*.cache
+*.editorconfig
+*.json
+*.cache
