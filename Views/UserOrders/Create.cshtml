@@ -118,8 +118,8 @@
                         @foreach (var item in listCartDetail)
                         {
                             <tr>
-                                <td>
-                                    <img style="width:60%" src="@item.Product.PhotoURL" alt="" />
+                                <td style="width:100px">
+                                    <img style="width:100%" src="@item.Product.PhotoURL" alt="" />
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Product.ProductName)
