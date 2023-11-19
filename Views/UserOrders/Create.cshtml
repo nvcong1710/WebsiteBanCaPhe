@@ -142,8 +142,9 @@
             </div>
             <div class="order-col">
                 <div><strong>TOTAL</strong></div>
-                <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+                <div><strong class="order-total"><script>document.write(formatNumber(@ViewBag.CartTotalValue));</script></strong></div>
             </div>
+
         </div>
     </div>
     <!-- /Order Details -->
@@ -156,3 +157,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
