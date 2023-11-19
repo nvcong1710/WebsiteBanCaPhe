@@ -1,7 +1,9 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 @model IEnumerable<WebsiteBanCaPhe.Models.Product>
+
 
 <!-- row -->
 <div class="row">
@@ -21,7 +23,7 @@
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a></h3>
-                                    <h4 class="product-price">@item.Price</h4>
+                                    <h4 class="product-price"><script>document.write(formatNumber(@item.Price));</script></h4>
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>

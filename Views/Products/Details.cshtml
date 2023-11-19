@@ -2,89 +2,406 @@
 
 @{
     ViewData["Title"] = "Details";
+    List<Feedback> feedbacks = ViewData["FeedbackList"] as List<Feedback>;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
 
-	<!-- Slick -->
-	<link type="text/css" rel="stylesheet" href="/css/slick.css" />
-	<link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
 
-	<!-- nouislider -->
-	<link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
 
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <style>
 
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            pading: 0;
+        }
+
+        label {
+            color: #000;
+        }
+
+        aside {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .survey-hr {
+            margin: 30px 0;
+            border: .5px solid #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #03658c;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+        }
+
+        .star-rating {
+            font-size: 0;
+            direction: ltr;
+        }
+
+            .star-rating input {
+                display: none;
+            }
+
+            .star-rating label {
+                color: white;
+                font-size: 36px;
+                padding: 10px;
+                cursor: pointer;
+                display: inline-block;
+                -webkit-font-smoothing: antialiased;
+            }
+
+                .star-rating label:hover,
+                .star-rating label:hover ~ label,
+                .star-rating input:checked ~ label {
+                    color: gold;
+                }
+        /** ====================
+         * Lista de Comentarios
+         =======================*/
+        .comments-container {
+            margin: 60px auto 15px;
+            width: 768px;
+        }
+
+            .comments-container h1 {
+                font-size: 36px;
+                color: #283035;
+                font-weight: 400;
+            }
+
+                .comments-container h1 a {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+        .comments-list {
+            margin-top: 30px;
+            position: relative;
+        }
+
+            .comments-list li {
+                margin-bottom: 15px;
+                display: block;
+                position: relative;
+            }
+
+                .comments-list li:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                    height: 0;
+                    width: 0;
+                }
+
+        .reply-list {
+            padding-left: 88px;
+            clear: both;
+            margin-top: 15px;
+        }
+        /**
+         * Avatar
+         ---------------------------*/
+        .comments-list .comment-avatar {
+            width: 65px;
+            height: 65px;
+            position: relative;
+            z-index: 99;
+            float: left;
+            border: 3px solid #FFF;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+            .comments-list .comment-avatar img {
+                width: 100%;
+                height: 100%;
+            }
+
+        .comment-main-level:after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            clear: both;
+        }
+        /**
+         * Caja del Comentario
+         ---------------------------*/
+        .comments-list .comment-box {
+            width: 680px;
+            float: right;
+            position: relative;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+            -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        }
+
+            .comments-list .comment-box:before, .comments-list .comment-box:after {
+                content: '';
+                height: 0;
+                width: 0;
+                position: absolute;
+                display: block;
+                border-width: 10px 12px 10px 0;
+                border-style: solid;
+                border-color: transparent #FCFCFC;
+                top: 8px;
+                left: -11px;
+            }
+
+            .comments-list .comment-box:before {
+                border-width: 11px 13px 11px 0;
+                border-color: transparent rgba(0,0,0,0.05);
+                left: -12px;
+            }
+
+        .comment-box .comment-head {
+            background: #FCFCFC;
+            padding: 10px 12px;
+            border-bottom: 1px solid #E5E5E5;
+            overflow: hidden;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+        }
+
+            .comment-box .comment-head i {
+                float: right;
+                margin-left: 14px;
+                position: relative;
+                top: 2px;
+                color: #dedede;
+                cursor: pointer;
+                -webkit-transition: color 0.3s ease;
+                -o-transition: color 0.3s ease;
+                transition: color 0.3s ease;
+            }
+
+                .comment-box .comment-head i:hover {
+                    color: #03658c;
+                }
+
+        .comment-box .comment-name {
+            color: #283035;
+            font-size: 14px;
+            font-weight: 700;
+            float: left;
+            margin-right: 10px;
+        }
+
+            .comment-box .comment-name a {
+                color: #283035;
+            }
+
+        .comment-box .comment-head span {
+            float: left;
+            color: #999;
+            font-size: 13px;
+            position: relative;
+            top: 1px;
+        }
+
+        .comment-box .comment-content {
+            background: #ffffff;
+            padding: 12px;
+            font-size: 15px;
+            color: #595959;
+            -webkit-border-radius: 0 0 4px 4px;
+            -moz-border-radius: 0 0 4px 4px;
+            border-radius: 0 0 4px 4px;
+        }
+    </style>
 </head>
 <body>
-	<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- Product main img -->
-				<div class="col-md-5">
-					<img style="width:100%" src=@Model.PhotoURL alt="">
-				</div>
-				<!-- /Product main img -->
-				<!-- Product details -->
-				<div class="col-md-5">
-					<div class="product-details">
-						<h2 class="product-name">@Model.ProductName</h2>
-						<div>
-							<div class="product-rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-						</div>
-						<div>
-							<h3 class="product-price">@Model.Price</h3>
-							<span class="product-available">@((@Model.Quantity > 0) ? "In Stock" : "Out Stock")</span>
-						</div>
-						<p>@Model.ProductDescription</p>
-						<h4>Thương hiệu : @Model.Branch</h4>
-						<h4>Xuất xứ : @Model.Origin</h4>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- Product main img -->
+                <div class="col-md-5">
+                    <img style="width:100%" src=@Model.PhotoURL alt="">
+                </div>
+                <!-- /Product main img -->
+                <!-- Product details -->
+                <div class="col-md-5">
+                    <div class="product-details">
+                        <h2 class="product-name">@Model.ProductName</h2>
+                        <div>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="product-price"><script>document.write(formatNumber(@Model.Price));</script></h4>
+                            <span class="product-available">@((@Model.Quantity > 0) ? "In Stock" : "Out Stock")</span>
+                        </div>
+                        <p>@Model.ProductDescription</p>
+                        <h4>Thương hiệu : @Model.Branch</h4>
+                        <h4>Xuất xứ : @Model.Origin</h4>
 
-						<div class="add-to-cart">
-							<a href="/CartDetails/AddToCart/@Model.ProductId">
-							<button class="add-to-cart-btn" @((@Model.Quantity == 0) ? "disabled" : "")><i class="fa fa-shopping-cart"></i> add to cart</button>
-							</a>
-						</div>
+                        <div class="add-to-cart">
+                            <a href="/CartDetails/AddToCart/@Model.ProductId">
+                                <button class="add-to-cart-btn" @((@Model.Quantity == 0) ? "disabled" : "")><i class="fa fa-shopping-cart"></i> add to cart</button>
+                            </a>
+                        </div>
 
-						<ul class="product-links">
-							<li>Category:</li>
-							<li><a href="#">@Model.Category.CategoryName</a></li>
-						</ul>
+                        <ul class="product-links">
+                            <li>Category:</li>
+                            <li><a href="#">@Model.Category.CategoryName</a></li>
+                        </ul>
 
-					</div>
-				</div>
-				<!-- /Product details -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- jQuery Plugins -->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/slick.min.js"></script>
-	<script src="/js/nouislider.min.js"></script>
-	<script src="/js/jquery.zoom.min.js"></script>
-	<script src="/js/main.js"></script>
+                    </div>
+                </div>
+                <!-- /Product details -->
+            </div>
+            <!-- /row -->
+            <!--FEEDBACK AREA-->
+            <div style="background:#ddd; padding:30px; margin-top:30px;">
+                <!--Feedback input form-->
+                <aside style="padding:15px">
+                    <form asp-action="CreateFeedback" method="post">
+                        <h3>Feedback</h3>
+                        <textarea style="height:100px; width:100%" type="text" name="Content"></textarea><br />
+                        <div>
+                            <span class="star-rating">
+                                <input type="radio" id="star1" name="Star" value="1"><label for="star1">★</label>
+                                <input type="radio" id="star2" name="Star" value="2"><label for="star2">★</label>
+                                <input type="radio" id="star3" name="Star" value="3"><label for="star3">★</label>
+                                <input type="radio" id="star4" name="Star" value="4"><label for="star4">★</label>
+                                <input type="radio" id="star5" name="Star" value="5"><label for="star5">★</label>
+                            </span>
+
+                        </div>
+                        <input type="hidden" name="FeedbackDate" value="@DateTime.Now" />
+                        <input type="hidden" name="AccountId" />
+                        <input type="hidden" name="ProductId" value="@Model.ProductId" />
+                        <div><button type="submit" style="width:80px; padding:5px">Gửi</button></div>
+                    </form>
+                </aside>
+                <!--Feedback input form-->
+                <!--Feedback list-->
+                @foreach (var f in feedbacks)
+                {
+                    <div class="comments-container">
+                        <ul id="comments-list" class="comments-list">
+                            <li>
+                                <div class="comment-main-level">
+
+                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+
+                                    <div class="comment-box">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name">@f.Account.FullName</h6>
+                                            <span>@f.FeedbackDate.ToString("yyyy/MM/dd HH:mm:ss")</span>
+                                        </div>
+                                        <div class="comment-head">
+                                            @for (int i = 0; i < f.Star; i++)
+                                            {
+                                                <span style="color:gold;font-size:2em;">★</span>
+                                            }
+                                        </div>
+                                        <div class="comment-content">
+                                            @f.Content
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+                <!--Feedback list-->
+            </div>
+            
+            <!--FEEDBACK AREA-->
+
+
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- jQuery Plugins -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/nouislider.min.js"></script>
+    <script src="/js/jquery.zoom.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        var starRating = document.querySelector('.star-rating');
+        starRating.addEventListener('mouseover', function (e) {
+            if (e.target.tagName === 'LABEL') {
+                var labels = starRating.querySelectorAll('label');
+                var hoveredLabelIndex = Array.from(labels).indexOf(e.target);
+                labels.forEach(function (label, index) {
+                    label.style.color = index <= hoveredLabelIndex ? 'gold' : 'white';
+                });
+            }
+        });
+        starRating.addEventListener('mouseout', function () {
+            var labels = starRating.querySelectorAll('label');
+            var checkedInput = starRating.querySelector('input:checked');
+            var checkedInputIndex = checkedInput ? Array.from(starRating.querySelectorAll('input')).indexOf(checkedInput) : -1;
+            labels.forEach(function (label, index) {
+                label.style.color = index <= checkedInputIndex ? 'gold' : 'white';
+            });
+        });
+        starRating.addEventListener('click', function (e) {
+            if (e.target.tagName === 'INPUT') {
+                var labels = starRating.querySelectorAll('label');
+                var checkedInputIndex = Array.from(starRating.querySelectorAll('input')).indexOf(e.target);
+                labels.forEach(function (label, index) {
+                    label.style.color = index <= checkedInputIndex ? 'gold' : 'white';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

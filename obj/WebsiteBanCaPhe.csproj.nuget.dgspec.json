@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
+    "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
   },
   "projects": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
+    "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectUniqueName": "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
         "projectName": "WebsiteBanCaPhe",
-        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\obj\\",
+        "projectPath": "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "D:\\Nam3\\Ki5\\Xay_dung_HTTT_Framework_nam3\\DOAN_F\\WebsiteBanCaPhe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "FontAwesome": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -71,6 +72,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.22, 6.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.22, 6.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.22, 6.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.22, 6.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

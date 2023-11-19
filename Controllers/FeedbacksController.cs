@@ -61,6 +61,11 @@ namespace WebsiteBanCaPhe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId,ProductId")] Feedback feedback)
         {
+            var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId != null)
+            {
+                feedback.AccountId = int.Parse(accountId); 
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(feedback);
