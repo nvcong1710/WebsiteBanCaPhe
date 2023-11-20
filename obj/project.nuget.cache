@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vhGtZhTtRX+3lRNAvPyZeC7bz5DLPVVzklVQEtFPTAZJsaTkykpMCSwpx7HYRtzjHVV1ATUCdd0ZSBk+xrR3mg==",
+  "dgSpecHash": "dIiMpcHREc1CLVrEBKtxmlmYmA6y6nTDauYuD+3QAHHFyHJoaUgd2nlsVZQX+f3XxrZG5RTvrpQxk7vn3wwR3A==",
   "success": true,
-  "projectFilePath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+  "projectFilePath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\WebsiteBanCaPhe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

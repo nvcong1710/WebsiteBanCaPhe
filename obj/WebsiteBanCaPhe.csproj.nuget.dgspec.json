@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\WebsiteBanCaPhe.csproj": {}
   },
   "projects": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
+    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\WebsiteBanCaPhe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\WebsiteBanCaPhe.csproj",
         "projectName": "WebsiteBanCaPhe",
-        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\WebsiteBanCaPhe.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder\\WebsiteBanCaPhe\\obj\\",
+        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\code2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
