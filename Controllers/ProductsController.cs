@@ -49,7 +49,7 @@ namespace WebsiteBanCaPhe.Controllers
         }
 
         //===================================
-        [HttpPost]
+          [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateFeedback([Bind("FeedbackId,Content,Star,FeedbackDate,AccountId,ProductId")] Feedback feedback)
         {
@@ -62,6 +62,24 @@ namespace WebsiteBanCaPhe.Controllers
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Branch", feedback.ProductId);
             _context.Add(feedback);
             await _context.SaveChangesAsync();
+
+            var feedbackList = await _context.Feedback
+                .Include(f => f.Product)
+                .Include(f => f.Account)
+                .Where(f => f.ProductId == feedback.ProductId).ToListAsync();
+
+            var product = await _context.Product.FirstOrDefaultAsync(p => p.ProductId == feedback.ProductId);
+
+            int k = 0;
+            foreach(var item in feedbackList)
+            {
+                k = (k + item.Star);
+            }
+            k = k / feedbackList.Count;
+
+            product.Star = k;
+            _context.SaveChangesAsync();
+
             return RedirectToAction("Details", "Products", new { id = feedback.ProductId });
         }
     }
