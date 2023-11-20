@@ -96,13 +96,14 @@
          * Lista de Comentarios
          =======================*/
         .comments-container {
-            margin: 60px auto 15px;
+            margin: 15px auto 15px;
             width: 768px;
         }
 
             .comments-container h1 {
                 font-size: 36px;
                 color: #283035;
+                margin-top: 15px;
                 font-weight: 400;
             }
 
@@ -272,11 +273,12 @@
                         <h2 class="product-name">@Model.ProductName</h2>
                         <div>
                             <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+@for (int i = 0; i < Model.Star; i++)
+                                {
+                                    <i class="fa fa-star"></i>
+                                }
+
+
                             </div>
                         </div>
                         <div>
@@ -335,7 +337,7 @@
                             <li>
                                 <div class="comment-main-level">
 
-                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+ <div class="comment-avatar"><img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt=""></div>
 
                                     <div class="comment-box">
                                         <div class="comment-head">
