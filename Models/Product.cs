@@ -25,6 +25,7 @@ namespace WebsiteBanCaPhe.Models
 
         [Required]
         public long Price { get; set; }
+        public int Star { get; set; } = 0;
 
         [Required]
         public long Quantity { get; set; }
