@@ -130,7 +130,8 @@ namespace WebsiteBanCaPhe.Controllers.Admin
                 {
                     ProductId = g.Key,
                     ProductName = g.First().Product.ProductName,
-                    QuantitySold = g.Sum(od => od.Quantity)
+                    QuantitySold = g.Sum(od => od.Quantity),
+                    Quantity = g.First().Product.Quantity
                 }).ToListAsync();
 
             var stream = new MemoryStream();
