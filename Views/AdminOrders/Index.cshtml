@@ -5,7 +5,82 @@
     Layout = "_LayoutAdmin";
 }
 
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        height: 20px;
+        margin-right:10px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 0px;
+            bottom: 0px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+
 <table class="table responstable">
+    <label class="switch">
+        <input type="checkbox" id="toggle-switch" onchange="filterOrders()">
+        <span class="slider round"></span>
+    </label>
+    <span>Chỉ các đơn chưa hoàn thành</span>
+    </br>
+    <label class="switch">
+        <input type="checkbox" id="toggle-switch-this-month" onchange="filterOrders()">
+        <span class="slider round"></span>
+    </label>
+    <span>Chỉ các đơn trong tháng này</span>
+
     <thead>
         <tr>
             <th>
@@ -48,7 +123,7 @@
         @foreach (var item in Model)
         {
 
-            <tr>
+            <tr data-is-done="@item.IsDone" data-order-date="@item.OrderDate">
                 <form asp-action="Index" method="post">
                 <td>
                         @Html.DisplayFor(modelItem => item.OrderDate)
@@ -100,7 +175,29 @@
 
                 </form>
             </tr>
-
         }
     </tbody>
 </table>
+<script>
+    function filterOrders() {
+        var isChecked = document.getElementById('toggle-switch').checked;
+        var isThisMonthChecked = document.getElementById('toggle-switch-this-month').checked;
+        var rows = document.querySelectorAll('table.responstable tbody tr');
+        var now = new Date();
+
+        rows.forEach(function (row) {
+            var isPaid = row.querySelector('input[name="IsPaid"]').checked;
+            var isDone = row.getAttribute('data-is-done') === 'True';
+            var orderDate = new Date(row.getAttribute('data-order-date'));
+            var isThisMonth = orderDate.getFullYear() === now.getFullYear() && orderDate.getMonth() === now.getMonth();
+
+            if (isChecked && (isPaid && isDone)) {
+                row.style.display = 'none';
+            } else if (isThisMonthChecked && !isThisMonth) {
+                row.style.display = 'none';
+            } else {
+                row.style.display = '';
+            }
+        });
+    }
+</script>
