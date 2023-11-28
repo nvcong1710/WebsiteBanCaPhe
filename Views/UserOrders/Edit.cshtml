@@ -55,7 +55,15 @@
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input asp-for="IsDone" /> Đã nhận hàng
+                        @if (@Model.IsPaid)
+                        {
+                            <input asp-for="IsDone" />
+                        }
+                        else
+                        {
+                            <input asp-for="IsDone" disabled />
+                        }
+                        Đã nhận hàng
                     </label>
                 </div>
             </div>

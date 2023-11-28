@@ -22,7 +22,8 @@ namespace WebsiteBanCaPhe.Controllers.Admin
         // GET: AdminOrders
         public async Task<IActionResult> Index()
         {
-            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account);
+            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
+                 .OrderByDescending(u => u.OrderDate);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -33,7 +34,8 @@ namespace WebsiteBanCaPhe.Controllers.Admin
             var userOrder = await _context.UserOrder.FirstOrDefaultAsync(u => u.OrderId == id);
             userOrder.IsPaid = IsPaid;
             await _context.SaveChangesAsync();
-            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account);
+            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
+                .OrderByDescending(u=>u.OrderDate);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
