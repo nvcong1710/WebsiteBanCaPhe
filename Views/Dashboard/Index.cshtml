@@ -12,6 +12,11 @@
     long[] RevenueByMonthInstant = ViewData["RevenueByMonthInstant"] as long[];
     long[] RevenueByMonthRoaster = ViewData["RevenueByMonthRoaster"] as long[];
     long[] RevenueByMonthBean = ViewData["RevenueByMonthBean"] as long[];
+    var monthRate = (((float)@RevenueByMonth[@DateTime.Now.Month - 1] / @RevenueByMonth[@DateTime.Now.Month - 2]) - 1.0)*100.0;
+    var yearRate =((float) @RevenueByMonth.Sum() / 126000000 - 1.0) * 100.0;
+    var instantMonthRate = (((float)@RevenueByMonthInstant[@DateTime.Now.Month - 1] / @RevenueByMonthInstant[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
+    var roasterMonthRate = (((float)@RevenueByMonthRoaster[@DateTime.Now.Month - 1] / @RevenueByMonthRoaster[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
+    var beanMonthRate = (((float)@RevenueByMonthBean[@DateTime.Now.Month - 1] / @RevenueByMonthBean[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
     Layout = "_LayoutAdmin";
 }
 
@@ -97,23 +102,120 @@
 }
 
 
-<div style="margin: 20px; padding: 20px; border: 1px solid #ddd;">
-    <h1 style="color: red; font-family: Arial, sans-serif; font-size: 24px;">Doanh thu tháng @DateTime.Now.Month: <script>document.write(formatNumber(@RevenueByMonth[DateTime.Now.Month - 1]));</script> </h1>
-    <h1 style="color: red; font-family: Arial, sans-serif; font-size: 24px;">
-        Doanh thu năm @DateTime.Now.Year: <script>document.write(formatNumber(@RevenueByMonth.Sum()))</script></h1>
+<div class="card-container">
+    <div class="card">
+        <h1>Doanh thu tháng @DateTime.Now.Month</h1>
+        <h2 id="revenueByMonth"></h2>
+        <p id="monthRate"></pid>
+    </div>
+    <div class="card">
+        <h1>Doanh thu năm @DateTime.Now.Year</h1>
+        <h2 id="revenueByYear"></h2>
+        <p id="yearRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê hoà tan</h1>
+        <h2 id="revenueInstant"></h2>
+        <p id="instantRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê rang xay</h1>
+        <h2 id="revenueRoaster"></h2>
+        <p id="roasterRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê hạt</h1>
+        <h2 id="revenueBean"></h2>
+        <p id="beanRate"></p>
+    </div>
 </div>
-<div style="display: flex; flex-direction: row; justify-content: space-around; margin: 20px; padding: 20px; border: 1px solid #ddd;">
-    <h2 style="color: red; font-family: Arial, sans-serif; font-size: 24px;">
-        Cà phê hoà tan:  <script>document.write(formatNumber(@RevenueInstant))</script></h2>
-    <h2 style="color: red; font-family: Arial, sans-serif; font-size: 24px;">Cà phê rang xay: <script>document.write(formatNumber(@RevenueRoaster))</script></h2>
-    <h2 style="color: red; font-family: Arial, sans-serif; font-size: 24px;">Cà phê hạt: <script>document.write(formatNumber(@RevenueBean))</script></h2>
-</div>
+
+<style>
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        background: #E0F7FA;
+        border-radius: 5px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+        .card h1 {
+            color: #cd00e8;
+            font-size: 20px;
+            font-weight:bolder;
+        }
+
+        .card h2 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: green;
+            font-size: 16px;
+        }
+</style>
+
+<script>
+    // Variables for revenue data
+    var revenueByMonth = @RevenueByMonth[DateTime.Now.Month - 1];
+    var revenueByYear = @RevenueByMonth.Sum();
+    var revenueInstant = @RevenueByMonthInstant[DateTime.Now.Month-1];
+    var revenueRoaster = @RevenueByMonthRoaster[DateTime.Now.Month-1];
+    var revenueBean = @RevenueByMonthBean[DateTime.Now.Month-1];
+    var instantRate = @instantMonthRate;
+    var roasterRate = @roasterMonthRate;
+    var beanRate = @beanMonthRate;
+    var monthRate = @monthRate;
+    var yearRate = @yearRate;
+
+    // Display the data
+    document.getElementById('revenueInstant').textContent = formatNumber(revenueInstant);
+    document.getElementById('revenueRoaster').textContent = formatNumber(revenueRoaster);
+    document.getElementById('revenueBean').textContent = formatNumber(revenueBean);
+    document.getElementById('revenueByMonth').textContent = formatNumber(revenueByMonth);
+    document.getElementById('revenueByYear').textContent = formatNumber(revenueByYear);
+
+
+    var rateElements = [
+        { element: 'instantRate', rate: instantRate },
+        { element: 'roasterRate', rate: roasterRate },
+        { element: 'beanRate', rate: beanRate },
+        { element: 'monthRate', rate: monthRate }
+    ];
+    for (var i = 0; i < rateElements.length; i++) {
+        var rateElement = document.getElementById(rateElements[i].element);
+        if (rateElements[i].rate < 0) {
+            rateElement.style.color = 'red';
+            rateElement.textContent = "↓" + Math.abs(rateElements[i].rate).toFixed(2) + "% so với tháng trước";
+        } else {
+            rateElement.style.color = 'green';
+            rateElement.textContent = "↑" + rateElements[i].rate.toFixed(2) + "% so với tháng trước";
+        }
+    }
+    var rateElement = document.getElementById('yearRate');
+    if (yearRate < 0) {
+        rateElement.style.color = 'red';
+        rateElement.textContent = "↓" + Math.abs(yearRate).toFixed(2) + "% so với năm trước";
+    } else {
+        rateElement.style.color = 'green';
+        rateElement.textContent = "↑" + yearRate.toFixed(2) + "% so với năm trước";
+    }
+</script>
 
 
 
 <div class="row">
-    <div id="curve_chart" class="col-md-8" style="height: 500px"></div>
-    <div class="col-md-4" id="piechart" style="height: 500px;"></div>
+    <div id="curve_chart" class="col-md-7" style="height: 500px"></div>
+    <div class="col-md-5" id="piechart" style="height: 500px;"></div>
 </div>
-
+<div style="height:30px"></div>
 <div id="columnchart" style="height: 500px;"></div>

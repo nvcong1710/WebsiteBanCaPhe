@@ -101,7 +101,7 @@ namespace WebsiteBanCaPhe.Controllers.Admin
                 int row = 2;
                 foreach (var order in listOrder)
                 {
-                    worksheet.Cells[row, 1].Value = order.OrderDate;
+                    worksheet.Cells[row, 1].Value = order.OrderDate.ToString("yyyy-MM-dd");
                     worksheet.Cells[row, 2].Value = order.ReceiverName;
                     worksheet.Cells[row, 3].Value = order.PhoneNumber;
                     worksheet.Cells[row, 4].Value = order.Address;
@@ -130,7 +130,8 @@ namespace WebsiteBanCaPhe.Controllers.Admin
                 {
                     ProductId = g.Key,
                     ProductName = g.First().Product.ProductName,
-                    QuantitySold = g.Sum(od => od.Quantity)
+                    QuantitySold = g.Sum(od => od.Quantity),
+                    Quantity = g.First().Product.Quantity
                 }).ToListAsync();
 
             var stream = new MemoryStream();

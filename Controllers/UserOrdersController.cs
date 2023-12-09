@@ -24,7 +24,8 @@ namespace WebsiteBanCaPhe.Controllers
         {
             var accountId = HttpContext.Session.GetString("AccountId");
             var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
-                .Where(u => u.AccountId.ToString() == accountId);
+                .Where(u => u.AccountId.ToString() == accountId)
+                .OrderByDescending(u=>u.OrderDate);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
