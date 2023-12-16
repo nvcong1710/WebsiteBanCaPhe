@@ -43,6 +43,12 @@ namespace WebsiteBanCaPhe.Controllers
             return View(product);
         }
 
+        public IActionResult Index()
+        {
+            var productByCategory = _context.Product;
+            return View(productByCategory.ToList());
+        }
+
         private bool ProductExists(int id)
         {
           return (_context.Product?.Any(e => e.ProductId == id)).GetValueOrDefault();

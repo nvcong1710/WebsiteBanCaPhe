@@ -97,7 +97,7 @@
          =======================*/
         .comments-container {
             margin: 15px auto 15px;
-            width: 768px;
+            display: inline-flex;
         }
 
             .comments-container h1 {
@@ -171,8 +171,8 @@
          * Caja del Comentario
          ---------------------------*/
         .comments-list .comment-box {
-            width: 680px;
             float: right;
+            margin: 0 30px;
             position: relative;
             -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
             -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -306,14 +306,14 @@
             </div>
             <!-- /row -->
             <!--FEEDBACK AREA-->
-            <div style="background:#ddd; padding:30px; margin-top:30px;">
+            <div style="background:#ddd; padding:0px; margin-top:30px;">
                 <!--Feedback input form-->
                 <aside style="padding:15px">
                     <form asp-action="CreateFeedback" method="post">
                         <h3>Feedback</h3>
                         <textarea style="height:100px; width:100%" type="text" name="Content"></textarea><br />
-                        <div>
-                            <span class="star-rating">
+                        <div style="padding: 0px;">
+                            <span class="star-rating" style="padding: 0px;">
                                 <input type="radio" id="star1" name="Star" value="1"><label for="star1">★</label>
                                 <input type="radio" id="star2" name="Star" value="2"><label for="star2">★</label>
                                 <input type="radio" id="star3" name="Star" value="3"><label for="star3">★</label>
@@ -330,35 +330,38 @@
                 </aside>
                 <!--Feedback input form-->
                 <!--Feedback list-->
-                @foreach (var f in feedbacks)
-                {
-                    <div class="comments-container">
-                        <ul id="comments-list" class="comments-list">
-                            <li>
-                                <div class="comment-main-level">
+                <div style="padding-left:60px">
+                    @foreach (var f in feedbacks)
+                    {
+                        <div class="comments-container" style="width:fit-content">
+                            <ul id="comments-list" class="comments-list">
+                                <li>
+                                    <div class="comment-main-level">
 
- <div class="comment-avatar"><img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt=""></div>
+                                        <div class="comment-avatar"><img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt=""></div>
 
-                                    <div class="comment-box">
-                                        <div class="comment-head">
-                                            <h6 class="comment-name">@f.Account.FullName</h6>
-                                            <span>@f.FeedbackDate.ToString("yyyy/MM/dd HH:mm:ss")</span>
-                                        </div>
-                                        <div class="comment-head">
-                                            @for (int i = 0; i < f.Star; i++)
-                                            {
-                                                <span style="color:gold;font-size:2em;">★</span>
-                                            }
-                                        </div>
-                                        <div class="comment-content">
-                                            @f.Content
+                                        <div class="comment-box">
+                                            <div class="comment-head">
+                                                <h6 class="comment-name">@f.Account.FullName</h6>
+                                                <span>@f.FeedbackDate.ToString("yyyy/MM/dd HH:mm:ss")</span>
+                                            </div>
+                                            <div class="comment-head" style="padding: 0px;">
+                                                @for (int i = 0; i < f.Star; i++)
+                                                {
+                                                    <span style="color:gold;font-size:2em;">★</span>
+                                                }
+                                            </div>
+                                            <div class="comment-content">
+                                                @f.Content
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                }
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+                
 
                 <!--Feedback list-->
             </div>

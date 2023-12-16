@@ -37,4 +37,8 @@
     <None Include="wwwroot\img\Assets\WhiteCoffee_Malaysia.webp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\" />
+  </ItemGroup>
+
 </Project>

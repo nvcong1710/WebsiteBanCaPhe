@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebsiteBanCaPhe.Models.Product>
+
+<div class="row">
+    <!-- Products tab & slick -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="products-tabs">
+                <!-- tab -->
+                <div id="tab1" class="tab-pane active">
+                    <div data-nav="#slick-nav-1">
+                        @foreach (var item in Model)
+                        {
+                            <!-- product -->
+                            <div class="product col-md-3" style="padding:0px; margin: 40px 20px">
+                                <div class="product-img">
+                                    <img src="@item.PhotoURL" alt="">
+                                </div>
+                                <div class="product-body" style="height:150px">
+                                    <h3 class="product-name"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a></h3>
+                                    <h4 class="product-price"><script>document.write(formatNumber(@item.Price));</script></h4>
+                                    <div class="product-rating">
+                                        @for (int i = 0; i < item.Star; i++)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+
+                                    </div>
+                                    <div class="product-btns">
+                                        <a href="/Products/Details/@item.ProductId">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <a href="/CartDetails/AddToCart/@item.ProductId">
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- /product -->
+                        }
+                    </div>
+                </div>
+                <!-- /tab -->
+            </div>
+        </div>
+    </div>
+    <!-- Products tab & slick -->
+</div>
+<!-- /row -->

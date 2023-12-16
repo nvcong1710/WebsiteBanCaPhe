@@ -2,10 +2,8 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout = "_LayoutBeforeLogin";
+    Layout = null;
 }
-
-<h1>Login</h1>
 
 @if (!ViewData.ModelState.IsValid)
 {
@@ -16,7 +14,7 @@
         }
     </div>
 }
-<div class="row">
+@*<div class="row">
     <div class="col-lg-6">
         <div class="p-5">
             <form asp-action="Login" method="post" class="user">
@@ -32,4 +30,113 @@
             </form>
         </div>
     </div>
-</div>
+</div>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="/css/loginstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+
+    <div class="container" id="container">
+
+        <div class="form-container register-container">
+            <form asp-action="Create">
+                <h1>Register</h1>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Số điện thoại...">
+                <input asp-for="Password" class="form-control" placeholder="Mật khẩu">
+                <input asp-for="FullName" class="form-control" placeholder="Tên người dùng...">
+
+                <div class="">
+                    <label>Giới tính</label>
+                    <select asp-for="Gender">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+                <button>Register</button>
+            </form>
+        </div>
+
+        <div class="form-container login-container">
+            <form asp-action="Login" method="post" class="user">
+                <h1>Login</h1>
+                <input type="text" class="form-control form-control-user" id="phone" name="phone" required placeholder="Nhập số điện thoại...">
+                <input type="password" class="form-control form-control-user" id="password" name="password" required placeholder="Nhập mật khẩu...">
+                <button>Login</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="title">Hello <br> friends</h1>
+                    <p>if you have an account, login here and have fun</p>
+                    <button class="ghost" id="login">
+                        Login
+                        <i class="lni lni-arrow-left login"></i>
+                    </button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="title">Start your <br> journey now</h1>
+                    <p>if you don't have an account yet, join us and start your journey.</p>
+                    <button class="ghost" id="register">
+                        Register
+                        <i class="lni lni-arrow-right register"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+
+    <!-- favicon-->
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+
+
+    <!-- jquery -->
+    <script src="/assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="/assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="/assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="/assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="/assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="/assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
