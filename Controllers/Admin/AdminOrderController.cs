@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanCaPhe.Data;
 using WebsiteBanCaPhe.Models;
+using X.PagedList;
 
 namespace WebsiteBanCaPhe.Controllers.Admin
 {
@@ -20,11 +22,15 @@ namespace WebsiteBanCaPhe.Controllers.Admin
         }
 
         // GET: AdminOrders
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? page)
         {
+            if (page == null)
+            {
+                page = 1;
+            }
             var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
                  .OrderByDescending(u => u.OrderDate);
-            return View(await websiteBanCaPheContext.ToListAsync());
+            return View(websiteBanCaPheContext.ToList().ToPagedList((int)page, 10));
         }
 
         [HttpPost]

@@ -1,4 +1,7 @@
-﻿@model IEnumerable<WebsiteBanCaPhe.Models.Product>
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+@model IPagedList<WebsiteBanCaPhe.Models.Product>
 
 <div class="row">
     <!-- Products tab & slick -->
@@ -40,12 +43,14 @@
                             </div>
                             <!-- /product -->
                         }
+                        </br>
                     </div>
                 </div>
                 <!-- /tab -->
             </div>
         </div>
     </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new{page}))
     <!-- Products tab & slick -->
 </div>
 <!-- /row -->
