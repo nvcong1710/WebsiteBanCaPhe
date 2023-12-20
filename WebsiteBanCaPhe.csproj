@@ -26,15 +26,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="X.PagedList" Version="9.0.0-prerelease" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="9.0.0-prerelease" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\Assets\ChePhin3.webp" />
-    <None Include="wwwroot\img\Assets\G7_3in1_Box.webp" />
-    <None Include="wwwroot\img\Assets\G7_3in1_pocket.webp" />
-    <None Include="wwwroot\img\Assets\TrungNguyenLegend_Success1.webp" />
-    <None Include="wwwroot\img\Assets\TrungNguyenLegend_Success2.webp" />
-    <None Include="wwwroot\img\Assets\WhiteCoffee_Malaysia.webp" />
+    <Folder Include="wwwroot\img\Assets\" />
   </ItemGroup>
 
 </Project>
