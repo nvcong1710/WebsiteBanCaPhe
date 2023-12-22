@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList.Mvc.Core;
 using WebsiteBanCaPhe.Data;
 using WebsiteBanCaPhe.Models;
+using X.PagedList;
 
 namespace WebsiteBanCaPhe.Controllers
 {
@@ -41,6 +43,16 @@ namespace WebsiteBanCaPhe.Controllers
             }
 
             return View(product);
+        }
+
+        public IActionResult Index(int? page)
+        {
+            if(page ==  null)
+            {
+                page = 1;
+            }
+            var productByCategory = _context.Product.ToList();
+            return View(productByCategory.ToPagedList((int)page, 9));
         }
 
         private bool ProductExists(int id)
