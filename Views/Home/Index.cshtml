@@ -18,10 +18,10 @@
                         {
                             <!-- product -->
                             <div class="product">
-                                <div class="product-img">
+                                <div class="product-img" style="width: 100%; height: auto; object-fit: cover; filter: brightness(1.2) contrast(1.1);">
                                     <img src="@item.PhotoURL" alt="">
                                 </div>
-                                <div class="product-body" style="height:150px">
+                                <div class="product-body" style="height:150px; line-height:1.5; padding:10px;">
                                     <h3 class="product-name"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a></h3>
                                     <h4 class="product-price"><script>document.write(formatNumber(@item.Price));</script></h4>
                                     <div class="product-rating">

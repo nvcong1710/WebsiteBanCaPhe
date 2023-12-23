@@ -5,30 +5,35 @@
     Layout = "_LayoutAdmin";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="margin-bottom: 15px;">
+    <a asp-action="Create" class="btn btn-primary">Tạo mới</a>
 </p>
-<table class="table">
-    <thead>
+
+<table class="table table-bordered table-hover">
+    <thead class="thead-light">
         <tr>
             <th>
                 Tên danh mục
             </th>
-            <th></th>
+            <th style="width: 200px;">Hành động</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td style="white-space: nowrap;">
+                    <div class="btn-group" role="group" >
+                        <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-primary btn-sm" style="margin-right: 5px;">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-info btn-sm" style="margin-right: 5px;">Chi tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-danger btn-sm" style="margin-right: 5px;">Xóa</a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+

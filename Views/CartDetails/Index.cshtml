@@ -4,9 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="margin-bottom: 15px;">
+    <a asp-action="Create" class="btn btn-primary">Tạo mới</a>
 </p>
+
 <table class="table responstable">
     <thead>
         <tr>
@@ -19,7 +20,9 @@
             <th>
                 Tổng giá tiền
             </th>
-            <th></th>
+            <th> 
+                Hành động
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -35,14 +38,14 @@
                 @Html.DisplayFor(modelItem => item.TotalPrice)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CartDetailId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CartDetailId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CartDetailId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CartDetailId" class="btn btn-primary btn-sm" style="margin-right: 5px;">Sửa</a>
+                <a asp-action="Details" asp-route-id="@item.CartDetailId" class="btn btn-info btn-sm" style="margin-right: 5px;">Chi tiết</a>
+                <a asp-action="Delete" asp-route-id="@item.CartDetailId" class="btn btn-danger btn-sm" style="margin-right: 5px;">Xóa</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
 <button>
-    <a href="/UserOrders/Create"> Đặt hàng </a>
+    <a href="/UserOrders/Create" class="btn btn-primary"> Đặt hàng </a>
 </button>

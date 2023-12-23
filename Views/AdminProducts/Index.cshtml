@@ -7,16 +7,17 @@
     Layout = "_LayoutAdmin";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="margin-bottom: 15px;">
+    <a asp-action="Create" class="btn btn-primary">Tạo mới</a>
 </p>
+
 <table class="table responstable">
     <thead>
         <tr>
             <th>
                 Tên sản phẩm
             </th>
-            <th style="width:250px">
+            <th>
                 Mô tả
             </th>
             <th>
@@ -37,7 +38,9 @@
             <th>
                 Danh mục
             </th>
-            <th></th>
+            <th style="width: 100px;">
+                Hành động
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -68,8 +71,8 @@
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Chỉnh sửa</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Chi tiết</a> 
+                <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-primary btn-sm" style="margin-right: 2px; margin-bottom: 3px">Sửa</a>
+                <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info btn-sm">Chi tiết</a> 
             </td>
         </tr>
 }
