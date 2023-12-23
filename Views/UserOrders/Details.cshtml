@@ -162,8 +162,11 @@
             </div>
             <div class="order-col">
                 <div><strong>TOTAL</strong></div>
-                <div><strong class="order-total">
-                        document.write(formatNumber(@Model.TotalValue));
+                <div>
+                    <strong class="order-total">
+                        <script>
+                            document.write(formatNumber(@Model.TotalValue));
+                        </script>
                     </strong>
                 </div>
             </div>
