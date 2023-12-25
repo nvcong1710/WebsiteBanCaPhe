@@ -119,6 +119,9 @@
                 @Html.DisplayNameFor(model => model.Account)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
                 Hành động
             </th>
         </tr>
@@ -170,6 +173,9 @@
                 
                 <td>
                         @Html.DisplayFor(modelItem => item.Account.FullName)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
                 </td>
                 <td>
                     <div class="form-group" style="text-align: center;">

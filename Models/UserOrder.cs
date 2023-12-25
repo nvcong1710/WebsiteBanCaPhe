@@ -25,6 +25,8 @@ namespace WebsiteBanCaPhe.Models
         [Required]
         public string? PaymentMethod { get; set; }
 
+        public string? EmailAddress { get; set; }
+
         public string? Note { get; set; } = "không có ghi chú";
 
         public long ShippingFee { get; set; } = 0;
