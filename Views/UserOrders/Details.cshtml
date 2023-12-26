@@ -11,67 +11,67 @@
     <div class="col-md-6">
         <hr />
         <dl class="dl-horizontal">
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Ngày đặt
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.OrderDate)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;"> 
                 Người nhận
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.ReceiverName)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Số điện thoại
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.PhoneNumber)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Địa chỉ
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Address)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Phương thức thanh toán
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.PaymentMethod)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Ghi chú
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Note)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Phí ship
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.ShippingFee)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Tổng giá trị
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.TotalValue)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Xác nhận
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.IsDone)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Tài khoản
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Account.FullName)
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Trạng thái thanh toán
             </dt>
             <dd>
@@ -84,7 +84,7 @@
                     @:Đã thanh toán
                 }
             </dd>
-            <dt>
+            <dt style="font-weight: bold; margin-bottom: 5px; color: #333; text-align: left;">
                 Trạng thái nhận hàng
             </dt>
             <dd>
@@ -101,8 +101,8 @@
         </dl>
 
         <div>
-            <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
-            <a asp-action="Index">Back to List</a>
+            <a asp-action="Edit" asp-route-id="@Model.OrderId" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;" >Edit</a>
+            <a asp-action="Index" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;" >Back to List</a>
         </div>
     </div>
     <!-- Order Details -->
