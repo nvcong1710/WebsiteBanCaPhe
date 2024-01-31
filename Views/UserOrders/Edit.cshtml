@@ -4,60 +4,66 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
 
-<h4>UserOrder</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<h4 style="color: #4bb6b7; text-align: center; margin-bottom: 15px;">UserOrder</h4>
+<hr style="border-color: #4bb6b7;" />
+<div class="row" style="margin: 20px 0; display: flex; justify-content: center; align-items: center;">
+    <div class="col-md-4" style="margin: 0 auto;">
+        <form asp-action="Edit" style="max-width: 300px; padding: 20px; background-color: #f9f9f9; border: 2px solid #4bb6b7; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="OrderId" />
             <div class="form-group">
-                <label asp-for="OrderDate" class="control-label"></label>
+                <label class="control-label">Ngày đặt</label>
                 <input asp-for="OrderDate" readonly class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ReceiverName" class="control-label"></label>
+                <label class="control-label">Tên người nhận</label>
                 <input asp-for="ReceiverName" class="form-control" />
                 <span asp-validation-for="ReceiverName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label class="control-label">Số điện thoại</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
+                <label class="control-label">Địa chỉ</label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PaymentMethod" class="control-label"></label>
+                <label class="control-label">Phương thức thanh toán</label>
                 <input asp-for="PaymentMethod" class="form-control" />
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Note" class="control-label"></label>
+                <label class="control-label">Note</label>
                 <input asp-for="Note" class="form-control" />
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ShippingFee" class="control-label"></label>
+                <label class="control-label">Phí ship</label>
                 <input asp-for="ShippingFee" readonly class="form-control" />
                 <span asp-validation-for="ShippingFee" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalValue" class="control-label"></label>
+                <label class="control-label">Tổng giá trị</label>
                 <input asp-for="TotalValue" readonly class="form-control" />
                 <span asp-validation-for="TotalValue" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-<<<<<<< HEAD
-                        <input asp-for="IsDone" /> Đã nhận hàng
+                        @if (@Model.IsPaid)
+                        {
+                            <input asp-for="IsDone" />
+                        }
+                        else
+                        {
+                            <input asp-for="IsDone" disabled />
+                        }
+                        Đã nhận hàng
                     </label>
                 </div>
             </div>
@@ -72,15 +78,14 @@
                 <select asp-for="AccountId" class="form-control" asp-items="ViewBag.AccountId"></select>
                 <span asp-validation-for="AccountId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group" style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Lưu" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;" />
             </div>
+             <div style="text-align: center; margin-top: 20px;">
+    <a asp-action="Index" class="btn btn-secondary" style="text-decoration: none; background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; color: #fff; padding: 10px 20px;">Trở lại danh sách</a>
+</div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

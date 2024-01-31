@@ -5,30 +5,29 @@
     Layout = "_LayoutAdmin";
 }
 
-<h2>Edit</h2>
 
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<h4 style="color: #4bb6b7; text-align: center; margin-bottom: 15px;">Danh mục</h4>
+<hr style="border-color: #4bb6b7;" />
+<div class="row" style="margin: 20px 0; display: flex; justify-content: center; align-items: center;">
+    <div class="col-md-4" style="margin: 0 auto;">
+        <form asp-action="Edit" style="max-width: 300px; padding: 20px; background-color: #f9f9f9; border: 2px solid #4bb6b7; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CategoryId" />
             <div class="form-group">
-                <label asp-for="CategoryName" class="control-label"></label>
-                <input asp-for="CategoryName" class="form-control" />
+                <label class="control-label" style="color: #333; text-align:center; ">Tên danh mục</label>
+                <input asp-for="CategoryName" class="form-control" style="border: 1px solid #4bb6b7; border-radius: 5px;" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group" style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Lưu" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;" />
             </div>
+             <div style="text-align: center; margin-top: 20px;">
+    <a asp-action="Index" class="btn btn-secondary" style="text-decoration: none; background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; color: #fff; padding: 10px 20px;">Trở lại danh sách</a>
+</div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

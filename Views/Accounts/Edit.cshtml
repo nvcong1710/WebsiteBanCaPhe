@@ -4,41 +4,40 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
-<h4>Account</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<h4 style="color: #4bb6b7; text-align: center; margin-bottom: 15px;">Tài khoản</h4>
+<hr style="border-color: #4bb6b7;" />
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
+    <div class="col-md-4" style="margin:0 auto;">
+        <form asp-action="Edit" style="max-width: 300px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border: 2px solid #4bb6b7; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AccountId" />
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label class="control-label" style="color: #333;">Số điện thoại</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
+                <label class="control-label" style="color: #333;">Mật khẩu</label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
+                <label class="control-label" style="color: #333;">Họ tên</label>
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
+                <label class="control-label" style="color: #333;">Giới tính</label>
                 <input asp-for="Gender" class="form-control" />
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group" style="margin-top: 10px; text-align: center;">
+                <input type="submit" value="Lưu" class="btn btn-primary" style="border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"/>
             </div>
         </form>
     </div>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

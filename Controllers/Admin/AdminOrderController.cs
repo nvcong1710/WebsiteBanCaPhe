@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanCaPhe.Data;
 using WebsiteBanCaPhe.Models;
+using X.PagedList;
 
 namespace WebsiteBanCaPhe.Controllers.Admin
 {
@@ -20,10 +17,15 @@ namespace WebsiteBanCaPhe.Controllers.Admin
         }
 
         // GET: AdminOrders
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? page)
         {
-            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account);
-            return View(await websiteBanCaPheContext.ToListAsync());
+            if (page == null)
+            {
+                page = 1;
+            }
+            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
+                 .OrderByDescending(u => u.OrderDate);
+            return View(websiteBanCaPheContext.ToList().ToPagedList((int)page, 10));
         }
 
         [HttpPost]
@@ -33,7 +35,8 @@ namespace WebsiteBanCaPhe.Controllers.Admin
             var userOrder = await _context.UserOrder.FirstOrDefaultAsync(u => u.OrderId == id);
             userOrder.IsPaid = IsPaid;
             await _context.SaveChangesAsync();
-            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account);
+            var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
+                .OrderByDescending(u=>u.OrderDate);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 

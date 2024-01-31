@@ -1,70 +1,58 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 @model IEnumerable<WebsiteBanCaPhe.Models.Product>
 
+
 <!-- row -->
 <div class="row">
+    <!-- Products tab & slick -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="products-tabs">
+                <!-- tab -->
+                <div id="tab1" class="tab-pane active">
+                    <div class="products-slick" data-nav="#slick-nav-1">
+                        @foreach (var item in Model)
+                        {
+                            <!-- product -->
+                            <div class="product">
+                                <div class="product-img" style="width: 100%; height: auto; object-fit: cover; filter: brightness(1.2) contrast(1.1);">
+                                    <img src="@item.PhotoURL" alt="">
+                                </div>
+                                <div class="product-body" style="height:150px; line-height:1.5; padding:10px;">
+                                    <h3 class="product-name"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a></h3>
+                                    <h4 class="product-price"><script>document.write(formatNumber(@item.Price));</script></h4>
+                                    <div class="product-rating">
+@for(int i = 0; i < item.Star; i++)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
 
-	<!-- section title -->
-	<div class="col-md-12">
-		<div class="section-title">
-			<h3 class="title">New Products</h3>
-			<div class="section-nav">
-				<ul class="section-tab-nav tab-nav">
-					<li><a data-toggle="tab" href="#tab1">Cà phê hạt</a></li>
-					<li><a data-toggle="tab" href="#tab1">Cà phê pha phin</a></li>
-					<li><a data-toggle="tab" href="#tab1">Cà phê hoà tan</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /section title -->
-	<!-- Products tab & slick -->
-	<div class="col-md-12">
-		<div class="row">
-			<div class="products-tabs">
-				<!-- tab -->
-				<div id="tab1" class="tab-pane active">
-					<div class="products-slick" data-nav="#slick-nav-1">
-						@foreach (var item in Model)
-						{
-							<!-- product -->
-						<div class="product">
-							<div class="product-img">
-								<img src="@item.PhotoURL" alt="">
-							</div>
-							<div class="product-body">
-									<h3 class="product-name"><a asp-controller = "Products" asp-action="Details" asp-route-id="@item.ProductId" >@item.ProductName</a></h3>
-								<h4 class="product-price">@item.Price</h4>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="product-btns">
-									<a href="/Products/Details/@item.ProductId">
-										<i class="fa fa-eye"></i>
-									</a>									
-								</div>
-							</div>
-								<a href="/CartDetails/AddToCart/@item.ProductId">
+
+                                    </div>
+                                    <div class="product-btns">
+                                        <a href="/Products/Details/@item.ProductId">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="/CartDetails/AddToCart/@item.ProductId">
                                     <div class="add-to-cart">
                                         <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
-								</a>
-						</div>
-						<!-- /product -->
-						}
-					</div>
-					<div id="slick-nav-1" class="products-slick-nav"></div>
-				</div>
-				<!-- /tab -->
-			</div>
-		</div>
-	</div>
-	<!-- Products tab & slick -->
+                                </a>
+                            </div>
+                            <!-- /product -->
+                        }
+                    </div>
+                    <div id="slick-nav-1" class="products-slick-nav"></div>
+                </div>
+                <!-- /tab -->
+            </div>
+        </div>
+    </div>
+    <!-- Products tab & slick -->
 </div>
 <!-- /row -->

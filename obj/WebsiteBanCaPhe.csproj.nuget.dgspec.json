@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
+    "C:\\Users\\admin\\source\\repos\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {}
   },
   "projects": {
-    "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
+    "C:\\Users\\admin\\source\\repos\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
         "projectName": "WebsiteBanCaPhe",
-        "projectPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\WebsiteBanCaPhe\\WebsiteBanCaPhe.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\document\\StudyMaterial\\session1year3\\httt\\Đồ án\\New folder (2)\\WebsiteBanCaPhe\\obj\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\WebsiteBanCaPhe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "FontAwesome": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -58,6 +62,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[9.0.0-prerelease, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[9.0.0-prerelease, )"
             }
           },
           "imports": [

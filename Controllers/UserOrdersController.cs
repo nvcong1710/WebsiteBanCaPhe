@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,7 +26,8 @@ namespace WebsiteBanCaPhe.Controllers
         {
             var accountId = HttpContext.Session.GetString("AccountId");
             var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
-                .Where(u => u.AccountId.ToString() == accountId);
+                .Where(u => u.AccountId.ToString() == accountId)
+                .OrderByDescending(u => u.OrderDate);
             return View(await websiteBanCaPheContext.ToListAsync());
         }
 
@@ -44,8 +47,8 @@ namespace WebsiteBanCaPhe.Controllers
                 .FirstOrDefaultAsync(m => m.OrderId == id);
 
             var orderDetailList = _context.OrderDetail
-                .Include(o=>o.Product)
-                .Include(o=>o.UserOrder)
+                .Include(o => o.Product)
+                .Include(o => o.UserOrder)
                 .Where(o => o.OrderId == id);
             if (userOrder == null)
             {
@@ -81,11 +84,12 @@ namespace WebsiteBanCaPhe.Controllers
         // POST: UserOrders/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,OrderDate,ReceiverName,PhoneNumber,Address,PaymentMethod,Note,ShippingFee,TotalValue,IsDone,AccountId")] UserOrder userOrder)
+        public async Task<IActionResult> Create([Bind("OrderId,OrderDate,ReceiverName,PhoneNumber,Address,PaymentMethod,Note,ShippingFee,TotalValue,IsDone,AccountId,EmailAddress")] UserOrder userOrder)
         {
             var accountId = HttpContext.Session.GetString("AccountId");
             var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
             var cartId = cart.CartId;
+            string htmlBody = $@"<html><head><style>body {{ font-family: 'Arial', sans-serif; }} table{{ width: 100%; border-collapse: collapse; margin-top: 15px; }}th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }} th {{ background-color: #f2f2f2; }} h2{{text-align: center; }}</style></head><body><h2>Thông tin đơn hàng</h2><p>Xin chào {userOrder.ReceiverName},</p><p>Dưới đây là thông tin chi tiết về đơn hàng của bạn tại LuaHanThu:</p><table><tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th></tr>";
 
             var listCartDetail = _context.CartDetail
                 .Include(c => c.Cart)
@@ -94,6 +98,7 @@ namespace WebsiteBanCaPhe.Controllers
             foreach (var cartDetail in listCartDetail)
             {
                 var product = await _context.Product.FindAsync(cartDetail.ProductId);
+                htmlBody += $@"<tr><td>{product.ProductName}</td><td>{cartDetail.Quantity}</td><td>{product.Price}</td><td>{cartDetail.TotalPrice}</td></tr>";
 
                 // Check if product quantity is less than order quantity
                 if (product.Quantity < cartDetail.Quantity)
@@ -104,8 +109,9 @@ namespace WebsiteBanCaPhe.Controllers
                     return View(userOrder);
                 }
 
-                
+
             }
+            htmlBody += $@"</table><p>Tổng giá trị đơn hàng: {userOrder.TotalValue}</p><p>Phí vận chuyển: {userOrder.ShippingFee}</p><p>Tổng cộng: {userOrder.TotalValue + userOrder.ShippingFee}</p><p>Cảm ơn bạn đã mua sắm tại LuaHanThu!</p></body></html>";
             _context.Add(userOrder);
             await _context.SaveChangesAsync();
 
@@ -128,6 +134,28 @@ namespace WebsiteBanCaPhe.Controllers
             //Xoá sản phẩm trong giỏ hàng
             _context.CartDetail.RemoveRange(listCartDetail);
             await _context.SaveChangesAsync();
+            //==============================SEND EMAIL========================
+            using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+            {
+                smtpClient.Port = 587;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential("cong171002@gmail.com", "ynpb hqik ilvc fybl");
+                smtpClient.EnableSsl = true;
+
+                // Create a MailMessage object
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("cong171002@gmail.com", "Lửa Hận Thù");
+                mailMessage.To.Add(userOrder.EmailAddress);
+                mailMessage.Subject = "Đơn hàng của bạn tại LuaHanThu";
+
+                // Set the email body as HTML
+                mailMessage.Body = htmlBody;
+                mailMessage.IsBodyHtml = true;
+
+                // Send the email
+                smtpClient.Send(mailMessage);
+            }
+            //================================================================
             return RedirectToAction(nameof(Index));
         }
 

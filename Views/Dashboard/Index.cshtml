@@ -1,0 +1,252 @@
+@model IEnumerable<WebsiteBanCaPhe.Models.OrderDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    int thisMonth = @DateTime.Now.Month - 1;
+    int lastMonth = @DateTime.Now.Month - 2;
+    long RevenueInstant = (long)ViewData["RevenueInstant"];
+    long RevenueRoaster = (long)ViewData["RevenueRoaster"];
+    long RevenueBean = (long)ViewData["RevenueBean"];
+    double InstantRate = (double)ViewData["InstantRate"];
+    double RoasterRate = (double)ViewData["RoasterRate"];
+    double BeanRate = (double)ViewData["BeanRate"];
+    long[] RevenueByMonth = ViewData["RevenueByMonth"] as long[];
+    long[] RevenueByMonthInstant = ViewData["RevenueByMonthInstant"] as long[];
+    long[] RevenueByMonthRoaster = ViewData["RevenueByMonthRoaster"] as long[];
+    long[] RevenueByMonthBean = ViewData["RevenueByMonthBean"] as long[];
+
+    double monthRate = 100f;
+    double instantMonthRate = 100f;
+    double roasterMonthRate = 100f;
+    double beanMonthRate = 100f;
+    var yearRate = ((float)@RevenueByMonth.Sum() / 126000000 - 1.0) * 100.0;
+
+    if (thisMonth != 0)
+    {
+        if (@RevenueByMonth[lastMonth] != 0)
+        {
+            monthRate = (((float)@RevenueByMonth[thisMonth] / @RevenueByMonth[lastMonth]) - 1.0) * 100.0;
+        }
+
+        if (@RevenueByMonthInstant[lastMonth] != 0)
+        {
+            instantMonthRate = ((@RevenueByMonthInstant[thisMonth] / @RevenueByMonthInstant[lastMonth]) - 1.0) * 100.0;
+        }
+
+
+        if (@RevenueByMonthRoaster[lastMonth] != 0)
+        {
+            roasterMonthRate = ((@RevenueByMonthRoaster[thisMonth] / @RevenueByMonthRoaster[lastMonth]) - 1.0) * 100.0;
+        }
+
+
+        if (@RevenueByMonthBean[lastMonth] != 0)
+        {
+            beanMonthRate = ((@RevenueByMonthBean[thisMonth] / @RevenueByMonthBean[lastMonth]) - 1.0) * 100.0;
+        }
+    }
+
+
+    Layout = "_LayoutAdmin";
+}
+
+@{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Product', 'Revenue'],
+                    ['Hoà tan', @RevenueInstant],
+                    ['Rang xay', @RevenueRoaster],
+                    ['Hạt', @RevenueBean]
+                ]);
+
+                var options = {
+                    title: 'Doanh thu theo danh mục'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+            }
+    </script>
+
+    <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', ''],
+        @for (int i = 0; i < RevenueByMonth.Length; i++)
+        {
+            <text>['Th@(i + 1)', @RevenueByMonth[i]],</text>
+        }
+                ]);
+
+                var options = {
+                    title: 'Biểu đồ doanh thu năm @DateTime.Now.Year',
+                    hAxis: {title: 'Tháng',  titleTextStyle: {color: '#333'}},
+                    vAxis: {minValue: 0}
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+
+                chart.draw(data, options);
+            }
+    </script>
+
+    <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Tháng', 'Cà phê hoà tan', 'Cà phê rang xay', 'Cà phê hạt'],
+                    ['1', @RevenueByMonthInstant[0], @RevenueByMonthRoaster[0], @RevenueByMonthBean[0]],
+                    ['2', @RevenueByMonthInstant[1], @RevenueByMonthRoaster[1], @RevenueByMonthBean[1]],
+                    ['3', @RevenueByMonthInstant[2], @RevenueByMonthRoaster[2], @RevenueByMonthBean[2]],
+                    ['4', @RevenueByMonthInstant[3], @RevenueByMonthRoaster[3], @RevenueByMonthBean[3]],
+                    ['5', @RevenueByMonthInstant[4], @RevenueByMonthRoaster[4], @RevenueByMonthBean[4]],
+                    ['6', @RevenueByMonthInstant[5], @RevenueByMonthRoaster[5], @RevenueByMonthBean[5]],
+                    ['7', @RevenueByMonthInstant[6], @RevenueByMonthRoaster[6], @RevenueByMonthBean[6]],
+                    ['8', @RevenueByMonthInstant[7], @RevenueByMonthRoaster[7], @RevenueByMonthBean[7]],
+                    ['9', @RevenueByMonthInstant[8], @RevenueByMonthRoaster[8], @RevenueByMonthBean[8]],
+                    ['10', @RevenueByMonthInstant[9],@RevenueByMonthRoaster[9], @RevenueByMonthBean[9]],
+                    ['11', @RevenueByMonthInstant[10], @RevenueByMonthRoaster[10], @RevenueByMonthBean[10]],
+                    ['12', @RevenueByMonthInstant[11], @RevenueByMonthRoaster[11], @RevenueByMonthBean[11]]
+                ]);
+
+                var options = {
+                    title: 'Biểu đồ doanh thu theo danh mục',
+                    curveType: 'function',
+                    legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+                chart.draw(data, options);
+            }
+    </script>
+}
+
+
+<div class="card-container">
+    <div class="card">
+        <h1>Doanh thu tháng @DateTime.Now.Month</h1>
+        <h2 id="revenueByMonth"></h2>
+        <p id="monthRate"></pid>
+    </div>
+    <div class="card">
+        <h1>Doanh thu năm @DateTime.Now.Year</h1>
+        <h2 id="revenueByYear"></h2>
+        <p id="yearRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê hoà tan</h1>
+        <h2 id="revenueInstant"></h2>
+        <p id="instantRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê rang xay</h1>
+        <h2 id="revenueRoaster"></h2>
+        <p id="roasterRate"></p>
+    </div>
+    <div class="card">
+        <h1>Cà phê hạt</h1>
+        <h2 id="revenueBean"></h2>
+        <p id="beanRate"></p>
+    </div>
+</div>
+
+<style>
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        background: #E0F7FA;
+        border-radius: 5px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+        .card h1 {
+            color: #cd00e8;
+            font-size: 20px;
+            font-weight:bolder;
+        }
+
+        .card h2 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: green;
+            font-size: 16px;
+        }
+</style>
+
+<script>
+    // Variables for revenue data
+    var revenueByMonth = @RevenueByMonth[DateTime.Now.Month - 1];
+    var revenueByYear = @RevenueByMonth.Sum();
+    var revenueInstant = @RevenueByMonthInstant[DateTime.Now.Month-1];
+    var revenueRoaster = @RevenueByMonthRoaster[DateTime.Now.Month-1];
+    var revenueBean = @RevenueByMonthBean[DateTime.Now.Month-1];
+    var instantRate = @instantMonthRate;
+    var roasterRate = @roasterMonthRate;
+    var beanRate = @beanMonthRate;
+    var monthRate = @monthRate;
+    var yearRate = @yearRate;
+
+    // Display the data
+    document.getElementById('revenueInstant').textContent = formatNumber(revenueInstant);
+    document.getElementById('revenueRoaster').textContent = formatNumber(revenueRoaster);
+    document.getElementById('revenueBean').textContent = formatNumber(revenueBean);
+    document.getElementById('revenueByMonth').textContent = formatNumber(revenueByMonth);
+    document.getElementById('revenueByYear').textContent = formatNumber(revenueByYear);
+
+
+    var rateElements = [
+        { element: 'instantRate', rate: instantRate },
+        { element: 'roasterRate', rate: roasterRate },
+        { element: 'beanRate', rate: beanRate },
+        { element: 'monthRate', rate: monthRate }
+    ];
+    for (var i = 0; i < rateElements.length; i++) {
+        var rateElement = document.getElementById(rateElements[i].element);
+        if (rateElements[i].rate < 0) {
+            rateElement.style.color = 'red';
+            rateElement.textContent = "↓" + Math.abs(rateElements[i].rate).toFixed(2) + "% so với tháng trước";
+        } else {
+            rateElement.style.color = 'green';
+            rateElement.textContent = "↑" + rateElements[i].rate.toFixed(2) + "% so với tháng trước";
+        }
+    }
+    var rateElement = document.getElementById('yearRate');
+    if (yearRate < 0) {
+        rateElement.style.color = 'red';
+        rateElement.textContent = "↓" + Math.abs(yearRate).toFixed(2) + "% so với năm trước";
+    } else {
+        rateElement.style.color = 'green';
+        rateElement.textContent = "↑" + yearRate.toFixed(2) + "% so với năm trước";
+    }
+</script>
+
+
+
+<div class="row">
+    <div id="curve_chart" class="col-md-7" style="height: 500px"></div>
+    <div class="col-md-5" id="piechart" style="height: 500px;"></div>
+</div>
+<div style="height:30px"></div>
+<div id="columnchart" style="height: 500px;"></div>

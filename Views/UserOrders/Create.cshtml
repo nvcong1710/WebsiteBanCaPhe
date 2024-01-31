@@ -45,7 +45,11 @@
                 </select>
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
-
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Note" class="control-label"></label>
                 <input asp-for="Note" class="form-control" />
@@ -91,7 +95,7 @@
             <h3 class="title">Your Order</h3>
         </div>
         <div class="order-summary">
-            <table class="table">
+            <table class="table responstable">
                 <thead>
                     <tr>
                         <th>
@@ -118,8 +122,8 @@
                         @foreach (var item in listCartDetail)
                         {
                             <tr>
-                                <td>
-                                    <img style="width:60%" src="@item.Product.PhotoURL" alt="" />
+                                <td style="width:100px">
+                                    <img style="width:100%" src="@item.Product.PhotoURL" alt="" />
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Product.ProductName)
@@ -142,8 +146,9 @@
             </div>
             <div class="order-col">
                 <div><strong>TOTAL</strong></div>
-                <div><strong class="order-total">@ViewBag.CartTotalValue</strong></div>
+                <div><strong class="order-total"><script>document.write(formatNumber(@ViewBag.CartTotalValue));</script></strong></div>
             </div>
+
         </div>
     </div>
     <!-- /Order Details -->
@@ -156,3 +161,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

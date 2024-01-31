@@ -63,8 +63,11 @@
 
         <button type="submit" id="create-report">Tạo báo cáo</button>
     </form>
+        <a style="margin-bottom:20px" href="@Url.Action("SalesDownloadExcel", "Report", new { fromDate = ViewData["fromDate"], toDate = ViewData["toDate"] })" class="btn btn-primary">Download Excel</a>
+    
+
     <div>
-        <table class="table">
+        <table class="table responstable">
             <thead>
                 <tr>
                     <th style ="border:solid 1px #000!important">
@@ -145,9 +148,7 @@
                 }
             </tbody>
         </table>
-        <h2 style="color:red">Tổng doanh thu: @totalRevenue</h2>
+        <h2 style="color:red">Tổng doanh thu: <script>document.write(formatNumber(@totalRevenue));</script></h2>
     </div>
 </body>
 </html>
-
-
