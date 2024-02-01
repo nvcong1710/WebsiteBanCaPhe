@@ -30,19 +30,19 @@
 
         if (@RevenueByMonthInstant[lastMonth] != 0)
         {
-            instantMonthRate = ((@RevenueByMonthInstant[thisMonth] / @RevenueByMonthInstant[lastMonth]) - 1.0) * 100.0;
+            instantMonthRate = (((float)@RevenueByMonthInstant[thisMonth] / @RevenueByMonthInstant[lastMonth]) - 1.0) * 100.0;
         }
 
 
         if (@RevenueByMonthRoaster[lastMonth] != 0)
         {
-            roasterMonthRate = ((@RevenueByMonthRoaster[thisMonth] / @RevenueByMonthRoaster[lastMonth]) - 1.0) * 100.0;
+            roasterMonthRate = (((float)@RevenueByMonthRoaster[thisMonth] / @RevenueByMonthRoaster[lastMonth]) - 1.0) * 100.0;
         }
 
 
         if (@RevenueByMonthBean[lastMonth] != 0)
         {
-            beanMonthRate = ((@RevenueByMonthBean[thisMonth] / @RevenueByMonthBean[lastMonth]) - 1.0) * 100.0;
+            beanMonthRate = (((float)@RevenueByMonthBean[thisMonth] / @RevenueByMonthBean[lastMonth]) - 1.0) * 100.0;
         }
     }
 

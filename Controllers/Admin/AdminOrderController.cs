@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanCaPhe.Data;
@@ -30,14 +31,18 @@ namespace WebsiteBanCaPhe.Controllers.Admin
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(int id, bool IsPaid)
+        public async Task<IActionResult> Index(int id, bool IsPaid, int? page)
         {
+            if (page == null)
+            {
+                page = 1;
+            }
             var userOrder = await _context.UserOrder.FirstOrDefaultAsync(u => u.OrderId == id);
             userOrder.IsPaid = IsPaid;
             await _context.SaveChangesAsync();
             var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
-                .OrderByDescending(u=>u.OrderDate);
-            return View(await websiteBanCaPheContext.ToListAsync());
+                .OrderByDescending(u => u.OrderDate);
+            return View(websiteBanCaPheContext.ToList().ToPagedList((int)page, 10));
         }
 
 
