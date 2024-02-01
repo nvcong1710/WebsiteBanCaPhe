@@ -2,9 +2,11 @@
 
 @{
     ViewData["Title"] = "Index";
-    long RevenueInstant =(long) ViewData["RevenueInstant"];
-    long RevenueRoaster =(long) ViewData["RevenueRoaster"];
-    long RevenueBean = (long) ViewData["RevenueBean"];
+    int thisMonth = @DateTime.Now.Month - 1;
+    int lastMonth = @DateTime.Now.Month - 2;
+    long RevenueInstant = (long)ViewData["RevenueInstant"];
+    long RevenueRoaster = (long)ViewData["RevenueRoaster"];
+    long RevenueBean = (long)ViewData["RevenueBean"];
     double InstantRate = (double)ViewData["InstantRate"];
     double RoasterRate = (double)ViewData["RoasterRate"];
     double BeanRate = (double)ViewData["BeanRate"];
@@ -12,92 +14,121 @@
     long[] RevenueByMonthInstant = ViewData["RevenueByMonthInstant"] as long[];
     long[] RevenueByMonthRoaster = ViewData["RevenueByMonthRoaster"] as long[];
     long[] RevenueByMonthBean = ViewData["RevenueByMonthBean"] as long[];
-    var monthRate = (((float)@RevenueByMonth[@DateTime.Now.Month - 1] / @RevenueByMonth[@DateTime.Now.Month - 2]) - 1.0)*100.0;
-    var yearRate =((float) @RevenueByMonth.Sum() / 126000000 - 1.0) * 100.0;
-    var instantMonthRate = (((float)@RevenueByMonthInstant[@DateTime.Now.Month - 1] / @RevenueByMonthInstant[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
-    var roasterMonthRate = (((float)@RevenueByMonthRoaster[@DateTime.Now.Month - 1] / @RevenueByMonthRoaster[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
-    var beanMonthRate = (((float)@RevenueByMonthBean[@DateTime.Now.Month - 1] / @RevenueByMonthBean[@DateTime.Now.Month - 2]) - 1.0) * 100.0;
+
+    double monthRate = 100f;
+    double instantMonthRate = 100f;
+    double roasterMonthRate = 100f;
+    double beanMonthRate = 100f;
+    var yearRate = ((float)@RevenueByMonth.Sum() / 126000000 - 1.0) * 100.0;
+
+    if (thisMonth != 0)
+    {
+        if (@RevenueByMonth[lastMonth] != 0)
+        {
+            monthRate = (((float)@RevenueByMonth[thisMonth] / @RevenueByMonth[lastMonth]) - 1.0) * 100.0;
+        }
+
+        if (@RevenueByMonthInstant[lastMonth] != 0)
+        {
+            instantMonthRate = (((float)@RevenueByMonthInstant[thisMonth] / @RevenueByMonthInstant[lastMonth]) - 1.0) * 100.0;
+        }
+
+
+        if (@RevenueByMonthRoaster[lastMonth] != 0)
+        {
+            roasterMonthRate = (((float)@RevenueByMonthRoaster[thisMonth] / @RevenueByMonthRoaster[lastMonth]) - 1.0) * 100.0;
+        }
+
+
+        if (@RevenueByMonthBean[lastMonth] != 0)
+        {
+            beanMonthRate = (((float)@RevenueByMonthBean[thisMonth] / @RevenueByMonthBean[lastMonth]) - 1.0) * 100.0;
+        }
+    }
+
+
     Layout = "_LayoutAdmin";
 }
 
 @{
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Product', 'Revenue'],
-                ['Hoà tan', @RevenueInstant],
-                ['Rang xay', @RevenueRoaster],
-                ['Hạt', @RevenueBean]
-            ]);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Product', 'Revenue'],
+                    ['Hoà tan', @RevenueInstant],
+                    ['Rang xay', @RevenueRoaster],
+                    ['Hạt', @RevenueBean]
+                ]);
 
-            var options = {
-                title: 'Doanh thu theo danh mục'
-            };
+                var options = {
+                    title: 'Doanh thu theo danh mục'
+                };
 
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-            chart.draw(data, options);
-        }
+                chart.draw(data, options);
+            }
     </script>
 
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Month', ''],
-                @for (int i = 0; i < RevenueByMonth.Length; i++) {
-                    <text>['Th@(i+1)', @RevenueByMonth[i]],</text>
-                }
-            ]);
-
-            var options = {
-                title: 'Biểu đồ doanh thu năm @DateTime.Now.Year',
-                hAxis: {title: 'Tháng',  titleTextStyle: {color: '#333'}},
-                vAxis: {minValue: 0}
-            };
-
-            var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
-
-            chart.draw(data, options);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', ''],
+        @for (int i = 0; i < RevenueByMonth.Length; i++)
+        {
+            <text>['Th@(i + 1)', @RevenueByMonth[i]],</text>
         }
+                ]);
+
+                var options = {
+                    title: 'Biểu đồ doanh thu năm @DateTime.Now.Year',
+                    hAxis: {title: 'Tháng',  titleTextStyle: {color: '#333'}},
+                    vAxis: {minValue: 0}
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+
+                chart.draw(data, options);
+            }
     </script>
 
     <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Tháng', 'Cà phê hoà tan', 'Cà phê rang xay', 'Cà phê hạt'],
-                ['1', @RevenueByMonthInstant[0], @RevenueByMonthRoaster[0], @RevenueByMonthBean[0]],
-                ['2', @RevenueByMonthInstant[1], @RevenueByMonthRoaster[1], @RevenueByMonthBean[1]],
-                ['3', @RevenueByMonthInstant[2], @RevenueByMonthRoaster[2], @RevenueByMonthBean[2]],
-                ['4', @RevenueByMonthInstant[3], @RevenueByMonthRoaster[3], @RevenueByMonthBean[3]],
-                ['5', @RevenueByMonthInstant[4], @RevenueByMonthRoaster[4], @RevenueByMonthBean[4]],
-                ['6', @RevenueByMonthInstant[5], @RevenueByMonthRoaster[5], @RevenueByMonthBean[5]],
-                ['7', @RevenueByMonthInstant[6], @RevenueByMonthRoaster[6], @RevenueByMonthBean[6]],
-                ['8', @RevenueByMonthInstant[7], @RevenueByMonthRoaster[7], @RevenueByMonthBean[7]],
-                ['9', @RevenueByMonthInstant[8], @RevenueByMonthRoaster[8], @RevenueByMonthBean[8]],
-                ['10', @RevenueByMonthInstant[9],@RevenueByMonthRoaster[9], @RevenueByMonthBean[9]],
-                ['11', @RevenueByMonthInstant[10], @RevenueByMonthRoaster[10], @RevenueByMonthBean[10]],
-                ['12', @RevenueByMonthInstant[11], @RevenueByMonthRoaster[11], @RevenueByMonthBean[11]]
-            ]);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Tháng', 'Cà phê hoà tan', 'Cà phê rang xay', 'Cà phê hạt'],
+                    ['1', @RevenueByMonthInstant[0], @RevenueByMonthRoaster[0], @RevenueByMonthBean[0]],
+                    ['2', @RevenueByMonthInstant[1], @RevenueByMonthRoaster[1], @RevenueByMonthBean[1]],
+                    ['3', @RevenueByMonthInstant[2], @RevenueByMonthRoaster[2], @RevenueByMonthBean[2]],
+                    ['4', @RevenueByMonthInstant[3], @RevenueByMonthRoaster[3], @RevenueByMonthBean[3]],
+                    ['5', @RevenueByMonthInstant[4], @RevenueByMonthRoaster[4], @RevenueByMonthBean[4]],
+                    ['6', @RevenueByMonthInstant[5], @RevenueByMonthRoaster[5], @RevenueByMonthBean[5]],
+                    ['7', @RevenueByMonthInstant[6], @RevenueByMonthRoaster[6], @RevenueByMonthBean[6]],
+                    ['8', @RevenueByMonthInstant[7], @RevenueByMonthRoaster[7], @RevenueByMonthBean[7]],
+                    ['9', @RevenueByMonthInstant[8], @RevenueByMonthRoaster[8], @RevenueByMonthBean[8]],
+                    ['10', @RevenueByMonthInstant[9],@RevenueByMonthRoaster[9], @RevenueByMonthBean[9]],
+                    ['11', @RevenueByMonthInstant[10], @RevenueByMonthRoaster[10], @RevenueByMonthBean[10]],
+                    ['12', @RevenueByMonthInstant[11], @RevenueByMonthRoaster[11], @RevenueByMonthBean[11]]
+                ]);
 
-            var options = {
-                title: 'Biểu đồ doanh thu theo danh mục',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-            };
+                var options = {
+                    title: 'Biểu đồ doanh thu theo danh mục',
+                    curveType: 'function',
+                    legend: { position: 'bottom' }
+                };
 
-            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-            chart.draw(data, options);
-        }
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+                chart.draw(data, options);
+            }
     </script>
 }
 

@@ -23,7 +23,7 @@
             <th>
                 Trạng thái thanh toán
             </th>
-            <th></th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -60,9 +60,8 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.OrderId">Cập nhật</a>
-                    <br/>
-                    <a asp-action="Details" asp-route-id="@item.OrderId">Chi tiết</a>
+                    <a asp-action="Edit" asp-route-id="@item.OrderId" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;">Cập nhật</a>
+                    <a asp-action="Details" asp-route-id="@item.OrderId" class="btn btn-default" style="background-color: #4bb6b7; border: 1px solid #4bb6b7; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); color: #fff;">Chi tiết</a>
                 </td>
             </tr>
         }

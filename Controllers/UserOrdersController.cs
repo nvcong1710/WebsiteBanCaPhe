@@ -95,6 +95,12 @@ namespace WebsiteBanCaPhe.Controllers
                 .Include(c => c.Cart)
                 .Include(c => c.Product)
                 .Where(c => c.CartId == cartId);
+            var cartTotalValue = listCartDetail.Sum(c => c.TotalPrice);
+            ViewData["AccountId"] = accountId;
+            ViewData["OrderDate"] = DateTime.Now.ToString("yyyy-MM-dd");
+            ViewData["ShippingFee"] = 0;
+            ViewData["ListCartDetail"] = await listCartDetail.ToListAsync();
+            ViewData["TotalValue"] = ViewData["CartTotalValue"] = cartTotalValue;
             foreach (var cartDetail in listCartDetail)
             {
                 var product = await _context.Product.FindAsync(cartDetail.ProductId);
