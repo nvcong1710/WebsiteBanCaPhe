@@ -9,253 +9,261 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteBanCaPhe
 build_property.RootNamespace = WebsiteBanCaPhe
-build_property.ProjectDir = D:\Nam3\Ki5\Xay_dung_HTTT_Framework_nam3\DOAN_F\WebsiteBanCaPhe\
+build_property.ProjectDir = C:\Users\admin\source\repos\WebsiteBanCaPhe\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Nam3\Ki5\Xay_dung_HTTT_Framework_nam3\DOAN_F\WebsiteBanCaPhe
+build_property.MSBuildProjectDirectory = C:\Users\admin\source\repos\WebsiteBanCaPhe
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminOrders/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminLogin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Mb2dpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminOrders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5PcmRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminProducts/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminProducts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminProducts/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminProducts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminProducts/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminProducts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminProducts/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminProducts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminProducts/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/AdminProducts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/AddToCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQWRkVG9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/CartDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydERldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Carts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Carts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Carts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Carts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Carts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Dashboard/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Feedbacks/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Feedbacks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Feedbacks/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Feedbacks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Feedbacks/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Feedbacks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Feedbacks/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Feedbacks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Feedbacks/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Feedbacks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Home/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/IntroducePage/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/IntroducePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50cm9kdWNlUGFnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/OrderDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/OrderDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/OrderDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/OrderDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/OrderDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/ProductByCategory/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/ProductByCategory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEJ5Q2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Report/HomeReport.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Report/HomeReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEhvbWVSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Report/SalesReport.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Report/SalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFNhbGVzUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Report/WarehouseReport.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Report/WarehouseReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFdhcmVob3VzZVJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/Components/NavBar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2QmFyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_LayoutBeforeLogin.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/_LayoutBeforeLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCZWZvcmVMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/UserOrders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/UserOrders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/UserOrders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/UserOrders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/UserOrders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Warehouse/Index.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Warehouse/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
+[C:/Users/admin/source/repos/WebsiteBanCaPhe/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-md5lbm1x4i
