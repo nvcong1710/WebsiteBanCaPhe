@@ -32,7 +32,8 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Details()
         {
 			var accountId = HttpContext.Session.GetString("AccountId");
-			var account = await _context.Account.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+            if (accountId == null) return Redirect("/");
+            var account = await _context.Account.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
             return View(account);
         }
 		//===========================================================================
