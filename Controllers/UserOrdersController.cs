@@ -25,6 +25,7 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Index()
         {
             var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId == null) return Redirect("/");
             var websiteBanCaPheContext = _context.UserOrder.Include(u => u.Account)
                 .Where(u => u.AccountId.ToString() == accountId)
                 .OrderByDescending(u => u.OrderDate);
@@ -40,6 +41,7 @@ namespace WebsiteBanCaPhe.Controllers
             }
 
             var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId == null) return Redirect("/");
             var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
 
             var userOrder = await _context.UserOrder
@@ -63,6 +65,7 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Create()
         {
             var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId == null) return Redirect("/");
             var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
             var cartId = cart.CartId;
 
@@ -87,6 +90,7 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Create([Bind("OrderId,OrderDate,ReceiverName,PhoneNumber,Address,PaymentMethod,Note,ShippingFee,TotalValue,IsDone,AccountId,EmailAddress")] UserOrder userOrder)
         {
             var accountId = HttpContext.Session.GetString("AccountId");
+            if (accountId == null) return Redirect("/");
             var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
             var cartId = cart.CartId;
             string htmlBody = $@"<html><head><style>body {{ font-family: 'Arial', sans-serif; }} table{{ width: 100%; border-collapse: collapse; margin-top: 15px; }}th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }} th {{ background-color: #f2f2f2; }} h2{{text-align: center; }}</style></head><body><h2>Thông tin đơn hàng</h2><p>Xin chào {userOrder.ReceiverName},</p><p>Dưới đây là thông tin chi tiết về đơn hàng của bạn tại LuaHanThu:</p><table><tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th></tr>";

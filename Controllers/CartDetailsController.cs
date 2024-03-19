@@ -23,6 +23,7 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Index()
         {
 			var accountId = HttpContext.Session.GetString("AccountId");
+            if(accountId == null) return Redirect("/");
 			var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
 			var cartId = cart.CartId;
 			var websiteBanCaPheContext = _context.CartDetail
@@ -85,7 +86,8 @@ namespace WebsiteBanCaPhe.Controllers
         public async Task<IActionResult> Create([Bind("CartDetailId,CartId,ProductId,Quantity")] CartDetail cartDetail)
         {
 			var accountId = HttpContext.Session.GetString("AccountId");
-			var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
+            if (accountId == null) return Redirect("/");
+            var cart = await _context.Cart.FirstOrDefaultAsync(c => c.AccountId.ToString() == accountId);
 			var cartId = cart.CartId;
 			cartDetail.CartId = cartId;
 
