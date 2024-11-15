@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminLogin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Mb2dpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/AdminOrders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5PcmRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -190,6 +194,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Nam3/Ki5/Xay_dung_HTTT_Framework_nam3/DOAN_F/WebsiteBanCaPhe/Views/Report/HomeReport.cshtml]
